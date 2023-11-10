@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Integrity Check</string>
+    <string name="alert_message">This app is not licensed or legally available on the Play Store. We kindly ask you to uninstall the current app. Please search for %s on the Play Store and install the official app to ensure a legal and authorized experience.</string>
+</resources>

@@ -1,0 +1,22 @@
+package com.safetynet.integritycheck.utils
+
+import android.content.Context
+import com.safetynet.integritycheck.integrity.getSharedPrefs
+
+import java.util.*
+
+class Config(context: Context) {
+    val prefs = context.getSharedPrefs()
+
+    companion object {
+        fun newInstance(context: Context) = Config(context)
+    }
+
+    var isPlayIntegrityCheck: Boolean
+        get() = prefs.getBoolean("IS_PLAY_INTEGRITY_CHECK", false)
+        set(isCheck) = prefs.edit().putBoolean("IS_PLAY_INTEGRITY_CHECK", isCheck).apply()
+    var isToday: String?
+        get() = prefs.getString("IS_TODAY","")
+        set(todayDate) = prefs.edit().putString("IS_TODAY", todayDate).apply()
+
+}
