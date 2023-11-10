@@ -6,7 +6,7 @@ Android Ads code that is required in every app of Vasundhara
 Infotech [Vasundhara Infotech LLP](https://vasundharainfotechllp.com)
 
 [![API](https://img.shields.io/badge/API-23%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=23)
-[![](https://jitpack.io/v/sagarpatel1137/Integrity-Check.svg)](https://jitpack.io/#sagarpatel1137/IntegrityCheck/1.0.0)
+[![](https://jitpack.io/v/vickypathak123/Integrity-Check.svg)](https://jitpack.io/#vickypathak123/Integrity-Check)
 
 ## Using `build.gradle`
 
@@ -29,10 +29,14 @@ Infotech [Vasundhara Infotech LLP](https://vasundharainfotechllp.com)
         exclude 'META-INF/DEPENDENCIES'
         exclude 'META-INF/dependencies.txt'
     }
+    compileOptions {
+        coreLibraryDesugaringEnabled = true
+    }
 }
 
 dependencies {
-    implementation project(":IntegrityCheck")
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.0.4")
+    implementation 'com.github.vickypathak123:Integrity-Check:Tag'
 }
 ```
 
