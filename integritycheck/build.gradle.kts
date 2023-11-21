@@ -64,9 +64,9 @@ afterEvaluate {
         publications {
             register("release", MavenPublication::class) {
                 from(components["release"])
-                groupId = "com.github.sagarpatel1137"
+                groupId = "com.github.vickypathak123"
                 artifactId = "Integrity-Check"
-                version = "1.0.0"
+                version = "1.0.1"
             }
         }
     }
