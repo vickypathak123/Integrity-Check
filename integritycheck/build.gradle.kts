@@ -1,5 +1,7 @@
 plugins {
     id("com.android.library")
+    id("kotlin-android")
+    id("kotlin-kapt")
     id("org.jetbrains.kotlin.android")
     id("maven-publish")
 }
@@ -12,6 +14,7 @@ android {
         minSdk = 23
         targetSdk = 34
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled = true
     }
 
     buildTypes {
@@ -43,8 +46,8 @@ dependencies {
 
     implementation("androidx.multidex:multidex:2.0.1")
 
-    implementation("com.google.android.play:integrity:1.2.0")
-    implementation("com.google.apis:google-api-services-playintegrity:v1-rev20231018-2.0.0") {
+    implementation("com.google.android.play:integrity:1.3.0")
+    implementation("com.google.apis:google-api-services-playintegrity:v1-rev20231109-2.0.0") {
         exclude(group = "com.google.guava", module = "guava")
     }
 
@@ -66,7 +69,7 @@ afterEvaluate {
                 from(components["release"])
                 groupId = "com.github.vickypathak123"
                 artifactId = "Integrity-Check"
-                version = "1.0.1"
+                version = "1.0.2"
             }
         }
     }

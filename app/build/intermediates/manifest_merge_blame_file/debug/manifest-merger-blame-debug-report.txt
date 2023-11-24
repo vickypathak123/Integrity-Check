@@ -9,11 +9,11 @@
 9        android:targetSdkVersion="34" />
 10
 11    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-11-->[:integritycheck] /Users/android/Downloads/new/IntegrityCheck/integritycheck/build/intermediates/merged_manifest/debug/AndroidManifest.xml:7:5-79
-11-->[:integritycheck] /Users/android/Downloads/new/IntegrityCheck/integritycheck/build/intermediates/merged_manifest/debug/AndroidManifest.xml:7:22-76
+11-->[com.github.vickypathak123:Integrity-Check:1.0.1] /Users/android/.gradle/caches/transforms-3/572533dbe98985a1ab38c21fc3858f81/transformed/Integrity-Check-1.0.1/AndroidManifest.xml:7:5-79
+11-->[com.github.vickypathak123:Integrity-Check:1.0.1] /Users/android/.gradle/caches/transforms-3/572533dbe98985a1ab38c21fc3858f81/transformed/Integrity-Check-1.0.1/AndroidManifest.xml:7:22-76
 12    <uses-permission android:name="android.permission.INTERNET" />
-12-->[:integritycheck] /Users/android/Downloads/new/IntegrityCheck/integritycheck/build/intermediates/merged_manifest/debug/AndroidManifest.xml:8:5-67
-12-->[:integritycheck] /Users/android/Downloads/new/IntegrityCheck/integritycheck/build/intermediates/merged_manifest/debug/AndroidManifest.xml:8:22-64
+12-->[com.github.vickypathak123:Integrity-Check:1.0.1] /Users/android/.gradle/caches/transforms-3/572533dbe98985a1ab38c21fc3858f81/transformed/Integrity-Check-1.0.1/AndroidManifest.xml:8:5-67
+12-->[com.github.vickypathak123:Integrity-Check:1.0.1] /Users/android/.gradle/caches/transforms-3/572533dbe98985a1ab38c21fc3858f81/transformed/Integrity-Check-1.0.1/AndroidManifest.xml:8:22-64
 13
 14    <permission
 14-->[androidx.core:core:1.12.0] /Users/android/.gradle/caches/transforms-3/9ec33572cd69897e18278038775e970c/transformed/core-1.12.0/AndroidManifest.xml:22:5-24:47
@@ -27,52 +27,52 @@
 18-->[androidx.core:core:1.12.0] /Users/android/.gradle/caches/transforms-3/9ec33572cd69897e18278038775e970c/transformed/core-1.12.0/AndroidManifest.xml:26:22-94
 19
 20    <application
-20-->/Users/android/Downloads/new/IntegrityCheck/app/src/main/AndroidManifest.xml:5:5-24:19
+20-->/Users/android/Downloads/Integrity-Check/app/src/main/AndroidManifest.xml:5:5-24:19
 21        android:allowBackup="true"
-21-->/Users/android/Downloads/new/IntegrityCheck/app/src/main/AndroidManifest.xml:6:9-35
+21-->/Users/android/Downloads/Integrity-Check/app/src/main/AndroidManifest.xml:6:9-35
 22        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 22-->[androidx.core:core:1.12.0] /Users/android/.gradle/caches/transforms-3/9ec33572cd69897e18278038775e970c/transformed/core-1.12.0/AndroidManifest.xml:28:18-86
 23        android:dataExtractionRules="@xml/data_extraction_rules"
-23-->/Users/android/Downloads/new/IntegrityCheck/app/src/main/AndroidManifest.xml:7:9-65
+23-->/Users/android/Downloads/Integrity-Check/app/src/main/AndroidManifest.xml:7:9-65
 24        android:debuggable="true"
 25        android:extractNativeLibs="false"
 26        android:fullBackupContent="@xml/backup_rules"
-26-->/Users/android/Downloads/new/IntegrityCheck/app/src/main/AndroidManifest.xml:8:9-54
+26-->/Users/android/Downloads/Integrity-Check/app/src/main/AndroidManifest.xml:8:9-54
 27        android:icon="@mipmap/ic_launcher"
-27-->/Users/android/Downloads/new/IntegrityCheck/app/src/main/AndroidManifest.xml:9:9-43
+27-->/Users/android/Downloads/Integrity-Check/app/src/main/AndroidManifest.xml:9:9-43
 28        android:label="@string/app_name"
-28-->/Users/android/Downloads/new/IntegrityCheck/app/src/main/AndroidManifest.xml:10:9-41
+28-->/Users/android/Downloads/Integrity-Check/app/src/main/AndroidManifest.xml:10:9-41
 29        android:roundIcon="@mipmap/ic_launcher_round"
-29-->/Users/android/Downloads/new/IntegrityCheck/app/src/main/AndroidManifest.xml:11:9-54
+29-->/Users/android/Downloads/Integrity-Check/app/src/main/AndroidManifest.xml:11:9-54
 30        android:supportsRtl="true"
-30-->/Users/android/Downloads/new/IntegrityCheck/app/src/main/AndroidManifest.xml:12:9-35
+30-->/Users/android/Downloads/Integrity-Check/app/src/main/AndroidManifest.xml:12:9-35
 31        android:testOnly="true"
 32        android:theme="@style/Theme.IntegrityCheck" >
-32-->/Users/android/Downloads/new/IntegrityCheck/app/src/main/AndroidManifest.xml:13:9-52
+32-->/Users/android/Downloads/Integrity-Check/app/src/main/AndroidManifest.xml:13:9-52
 33        <activity
-33-->/Users/android/Downloads/new/IntegrityCheck/app/src/main/AndroidManifest.xml:15:9-23:20
+33-->/Users/android/Downloads/Integrity-Check/app/src/main/AndroidManifest.xml:15:9-23:20
 34            android:name="com.safetynet.MainActivity"
-34-->/Users/android/Downloads/new/IntegrityCheck/app/src/main/AndroidManifest.xml:16:13-41
+34-->/Users/android/Downloads/Integrity-Check/app/src/main/AndroidManifest.xml:16:13-41
 35            android:exported="true" >
-35-->/Users/android/Downloads/new/IntegrityCheck/app/src/main/AndroidManifest.xml:17:13-36
+35-->/Users/android/Downloads/Integrity-Check/app/src/main/AndroidManifest.xml:17:13-36
 36            <intent-filter>
-36-->/Users/android/Downloads/new/IntegrityCheck/app/src/main/AndroidManifest.xml:18:13-22:29
+36-->/Users/android/Downloads/Integrity-Check/app/src/main/AndroidManifest.xml:18:13-22:29
 37                <action android:name="android.intent.action.MAIN" />
-37-->/Users/android/Downloads/new/IntegrityCheck/app/src/main/AndroidManifest.xml:19:17-69
-37-->/Users/android/Downloads/new/IntegrityCheck/app/src/main/AndroidManifest.xml:19:25-66
+37-->/Users/android/Downloads/Integrity-Check/app/src/main/AndroidManifest.xml:19:17-69
+37-->/Users/android/Downloads/Integrity-Check/app/src/main/AndroidManifest.xml:19:25-66
 38
 39                <category android:name="android.intent.category.LAUNCHER" />
-39-->/Users/android/Downloads/new/IntegrityCheck/app/src/main/AndroidManifest.xml:21:17-77
-39-->/Users/android/Downloads/new/IntegrityCheck/app/src/main/AndroidManifest.xml:21:27-74
+39-->/Users/android/Downloads/Integrity-Check/app/src/main/AndroidManifest.xml:21:17-77
+39-->/Users/android/Downloads/Integrity-Check/app/src/main/AndroidManifest.xml:21:27-74
 40            </intent-filter>
 41        </activity>
 42
 43        <meta-data
-43-->[:integritycheck] /Users/android/Downloads/new/IntegrityCheck/integritycheck/build/intermediates/merged_manifest/debug/AndroidManifest.xml:17:9-19:57
+43-->[com.github.vickypathak123:Integrity-Check:1.0.1] /Users/android/.gradle/caches/transforms-3/572533dbe98985a1ab38c21fc3858f81/transformed/Integrity-Check-1.0.1/AndroidManifest.xml:17:9-19:57
 44            android:name="preloaded_fonts"
-44-->[:integritycheck] /Users/android/Downloads/new/IntegrityCheck/integritycheck/build/intermediates/merged_manifest/debug/AndroidManifest.xml:18:13-43
+44-->[com.github.vickypathak123:Integrity-Check:1.0.1] /Users/android/.gradle/caches/transforms-3/572533dbe98985a1ab38c21fc3858f81/transformed/Integrity-Check-1.0.1/AndroidManifest.xml:18:13-43
 45            android:resource="@array/preloaded_fonts" />
-45-->[:integritycheck] /Users/android/Downloads/new/IntegrityCheck/integritycheck/build/intermediates/merged_manifest/debug/AndroidManifest.xml:19:13-54
+45-->[com.github.vickypathak123:Integrity-Check:1.0.1] /Users/android/.gradle/caches/transforms-3/572533dbe98985a1ab38c21fc3858f81/transformed/Integrity-Check-1.0.1/AndroidManifest.xml:19:13-54
 46
 47        <provider
 47-->[androidx.emoji2:emoji2:1.2.0] /Users/android/.gradle/caches/transforms-3/cae3cfcc03f26baf61fafa199d093621/transformed/emoji2-1.2.0/AndroidManifest.xml:24:9-32:20

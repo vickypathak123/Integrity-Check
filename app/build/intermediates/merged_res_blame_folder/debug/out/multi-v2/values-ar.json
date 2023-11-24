@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.safetynet.app-mergeDebugResources-30:/values-ar/values-ar.xml",
+            "outputFile": "com.safetynet.app-mergeDebugResources-31:/values-ar/values-ar.xml",
             "map": [
                 {
                     "source": "/Users/android/.gradle/caches/transforms-3/a3fac2191125c3dc9a36bc5aa23fb637/transformed/appcompat-1.6.1/res/values-ar/values-ar.xml",

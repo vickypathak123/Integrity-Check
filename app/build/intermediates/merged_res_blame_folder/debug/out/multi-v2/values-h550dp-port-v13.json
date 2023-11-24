@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.safetynet.app-mergeDebugResources-30:/values-h550dp-port-v13/values-h550dp-port-v13.xml",
+            "outputFile": "com.safetynet.app-mergeDebugResources-31:/values-h550dp-port-v13/values-h550dp-port-v13.xml",
             "map": [
                 {
                     "source": "/Users/android/.gradle/caches/transforms-3/c74c5a1de2362fed924e72683e06a60d/transformed/material-1.10.0/res/values-h550dp-port-v13/values-h550dp-port-v13.xml",

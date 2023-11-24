@@ -1,10 +1,10 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/android/Downloads/new/IntegrityCheck/app/src/main/AndroidManifest.xml:2:1-25:12
-INJECTED from /Users/android/Downloads/new/IntegrityCheck/app/src/main/AndroidManifest.xml:2:1-25:12
-INJECTED from /Users/android/Downloads/new/IntegrityCheck/app/src/main/AndroidManifest.xml:2:1-25:12
-INJECTED from /Users/android/Downloads/new/IntegrityCheck/app/src/main/AndroidManifest.xml:2:1-25:12
-MERGED from [:integritycheck] /Users/android/Downloads/new/IntegrityCheck/integritycheck/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-22:12
+ADDED from /Users/android/Downloads/Integrity-Check/app/src/main/AndroidManifest.xml:2:1-25:12
+INJECTED from /Users/android/Downloads/Integrity-Check/app/src/main/AndroidManifest.xml:2:1-25:12
+INJECTED from /Users/android/Downloads/Integrity-Check/app/src/main/AndroidManifest.xml:2:1-25:12
+INJECTED from /Users/android/Downloads/Integrity-Check/app/src/main/AndroidManifest.xml:2:1-25:12
+MERGED from [com.github.vickypathak123:Integrity-Check:1.0.1] /Users/android/.gradle/caches/transforms-3/572533dbe98985a1ab38c21fc3858f81/transformed/Integrity-Check-1.0.1/AndroidManifest.xml:2:1-22:12
 MERGED from [com.google.android.material:material:1.10.0] /Users/android/.gradle/caches/transforms-3/c74c5a1de2362fed924e72683e06a60d/transformed/material-1.10.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/android/.gradle/caches/transforms-3/28182e3fb7cf4d36b5e55981522b0007/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/android/.gradle/caches/transforms-3/686f00b71718cfc8b5b9f0df350719f4/transformed/constraintlayout-2.0.1/AndroidManifest.xml:2:1-11:12
@@ -51,20 +51,20 @@ MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/
 MERGED from [androidx.print:print:1.0.0] /Users/android/.gradle/caches/transforms-3/3a3a1ca2baa39c3bb7c7983478c55190/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.multidex:multidex:2.0.1] /Users/android/.gradle/caches/transforms-3/80e63d30f8793e6c1b99c6c2b63ffeae/transformed/multidex-2.0.1/AndroidManifest.xml:17:1-22:12
 	package
-		INJECTED from /Users/android/Downloads/new/IntegrityCheck/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/android/Downloads/Integrity-Check/app/src/main/AndroidManifest.xml
 	android:versionName
-		INJECTED from /Users/android/Downloads/new/IntegrityCheck/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/android/Downloads/Integrity-Check/app/src/main/AndroidManifest.xml
 	xmlns:tools
-		ADDED from /Users/android/Downloads/new/IntegrityCheck/app/src/main/AndroidManifest.xml:3:5-51
+		ADDED from /Users/android/Downloads/Integrity-Check/app/src/main/AndroidManifest.xml:3:5-51
 	android:versionCode
-		INJECTED from /Users/android/Downloads/new/IntegrityCheck/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/android/Downloads/Integrity-Check/app/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from /Users/android/Downloads/new/IntegrityCheck/app/src/main/AndroidManifest.xml:2:11-69
+		ADDED from /Users/android/Downloads/Integrity-Check/app/src/main/AndroidManifest.xml:2:11-69
 application
-ADDED from /Users/android/Downloads/new/IntegrityCheck/app/src/main/AndroidManifest.xml:5:5-24:19
-INJECTED from /Users/android/Downloads/new/IntegrityCheck/app/src/main/AndroidManifest.xml:5:5-24:19
-MERGED from [:integritycheck] /Users/android/Downloads/new/IntegrityCheck/integritycheck/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:5-20:19
-MERGED from [:integritycheck] /Users/android/Downloads/new/IntegrityCheck/integritycheck/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:5-20:19
+ADDED from /Users/android/Downloads/Integrity-Check/app/src/main/AndroidManifest.xml:5:5-24:19
+INJECTED from /Users/android/Downloads/Integrity-Check/app/src/main/AndroidManifest.xml:5:5-24:19
+MERGED from [com.github.vickypathak123:Integrity-Check:1.0.1] /Users/android/.gradle/caches/transforms-3/572533dbe98985a1ab38c21fc3858f81/transformed/Integrity-Check-1.0.1/AndroidManifest.xml:10:5-20:19
+MERGED from [com.github.vickypathak123:Integrity-Check:1.0.1] /Users/android/.gradle/caches/transforms-3/572533dbe98985a1ab38c21fc3858f81/transformed/Integrity-Check-1.0.1/AndroidManifest.xml:10:5-20:19
 MERGED from [com.google.android.material:material:1.10.0] /Users/android/.gradle/caches/transforms-3/c74c5a1de2362fed924e72683e06a60d/transformed/material-1.10.0/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.10.0] /Users/android/.gradle/caches/transforms-3/c74c5a1de2362fed924e72683e06a60d/transformed/material-1.10.0/AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/android/.gradle/caches/transforms-3/686f00b71718cfc8b5b9f0df350719f4/transformed/constraintlayout-2.0.1/AndroidManifest.xml:9:5-20
@@ -88,49 +88,49 @@ MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] /Users/android/.g
 MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/android/.gradle/caches/transforms-3/57c162c137e01b25ca7eea7a38b32f73/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
 MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/android/.gradle/caches/transforms-3/57c162c137e01b25ca7eea7a38b32f73/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
 	android:extractNativeLibs
-		INJECTED from /Users/android/Downloads/new/IntegrityCheck/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/android/Downloads/Integrity-Check/app/src/main/AndroidManifest.xml
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.12.0] /Users/android/.gradle/caches/transforms-3/9ec33572cd69897e18278038775e970c/transformed/core-1.12.0/AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from /Users/android/Downloads/new/IntegrityCheck/app/src/main/AndroidManifest.xml:12:9-35
+		ADDED from /Users/android/Downloads/Integrity-Check/app/src/main/AndroidManifest.xml:12:9-35
 	android:label
-		ADDED from /Users/android/Downloads/new/IntegrityCheck/app/src/main/AndroidManifest.xml:10:9-41
+		ADDED from /Users/android/Downloads/Integrity-Check/app/src/main/AndroidManifest.xml:10:9-41
 	android:fullBackupContent
-		ADDED from /Users/android/Downloads/new/IntegrityCheck/app/src/main/AndroidManifest.xml:8:9-54
+		ADDED from /Users/android/Downloads/Integrity-Check/app/src/main/AndroidManifest.xml:8:9-54
 	android:roundIcon
-		ADDED from /Users/android/Downloads/new/IntegrityCheck/app/src/main/AndroidManifest.xml:11:9-54
+		ADDED from /Users/android/Downloads/Integrity-Check/app/src/main/AndroidManifest.xml:11:9-54
 	tools:targetApi
-		ADDED from /Users/android/Downloads/new/IntegrityCheck/app/src/main/AndroidManifest.xml:14:9-29
+		ADDED from /Users/android/Downloads/Integrity-Check/app/src/main/AndroidManifest.xml:14:9-29
 	android:icon
-		ADDED from /Users/android/Downloads/new/IntegrityCheck/app/src/main/AndroidManifest.xml:9:9-43
+		ADDED from /Users/android/Downloads/Integrity-Check/app/src/main/AndroidManifest.xml:9:9-43
 	android:allowBackup
-		ADDED from /Users/android/Downloads/new/IntegrityCheck/app/src/main/AndroidManifest.xml:6:9-35
+		ADDED from /Users/android/Downloads/Integrity-Check/app/src/main/AndroidManifest.xml:6:9-35
 	android:theme
-		ADDED from /Users/android/Downloads/new/IntegrityCheck/app/src/main/AndroidManifest.xml:13:9-52
+		ADDED from /Users/android/Downloads/Integrity-Check/app/src/main/AndroidManifest.xml:13:9-52
 	android:dataExtractionRules
-		ADDED from /Users/android/Downloads/new/IntegrityCheck/app/src/main/AndroidManifest.xml:7:9-65
+		ADDED from /Users/android/Downloads/Integrity-Check/app/src/main/AndroidManifest.xml:7:9-65
 activity#com.safetynet.MainActivity
-ADDED from /Users/android/Downloads/new/IntegrityCheck/app/src/main/AndroidManifest.xml:15:9-23:20
+ADDED from /Users/android/Downloads/Integrity-Check/app/src/main/AndroidManifest.xml:15:9-23:20
 	android:exported
-		ADDED from /Users/android/Downloads/new/IntegrityCheck/app/src/main/AndroidManifest.xml:17:13-36
+		ADDED from /Users/android/Downloads/Integrity-Check/app/src/main/AndroidManifest.xml:17:13-36
 	android:name
-		ADDED from /Users/android/Downloads/new/IntegrityCheck/app/src/main/AndroidManifest.xml:16:13-41
+		ADDED from /Users/android/Downloads/Integrity-Check/app/src/main/AndroidManifest.xml:16:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/android/Downloads/new/IntegrityCheck/app/src/main/AndroidManifest.xml:18:13-22:29
+ADDED from /Users/android/Downloads/Integrity-Check/app/src/main/AndroidManifest.xml:18:13-22:29
 action#android.intent.action.MAIN
-ADDED from /Users/android/Downloads/new/IntegrityCheck/app/src/main/AndroidManifest.xml:19:17-69
+ADDED from /Users/android/Downloads/Integrity-Check/app/src/main/AndroidManifest.xml:19:17-69
 	android:name
-		ADDED from /Users/android/Downloads/new/IntegrityCheck/app/src/main/AndroidManifest.xml:19:25-66
+		ADDED from /Users/android/Downloads/Integrity-Check/app/src/main/AndroidManifest.xml:19:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/android/Downloads/new/IntegrityCheck/app/src/main/AndroidManifest.xml:21:17-77
+ADDED from /Users/android/Downloads/Integrity-Check/app/src/main/AndroidManifest.xml:21:17-77
 	android:name
-		ADDED from /Users/android/Downloads/new/IntegrityCheck/app/src/main/AndroidManifest.xml:21:27-74
+		ADDED from /Users/android/Downloads/Integrity-Check/app/src/main/AndroidManifest.xml:21:27-74
 uses-sdk
-INJECTED from /Users/android/Downloads/new/IntegrityCheck/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /Users/android/Downloads/new/IntegrityCheck/app/src/main/AndroidManifest.xml
-INJECTED from /Users/android/Downloads/new/IntegrityCheck/app/src/main/AndroidManifest.xml
-MERGED from [:integritycheck] /Users/android/Downloads/new/IntegrityCheck/integritycheck/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
-MERGED from [:integritycheck] /Users/android/Downloads/new/IntegrityCheck/integritycheck/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-44
+INJECTED from /Users/android/Downloads/Integrity-Check/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/android/Downloads/Integrity-Check/app/src/main/AndroidManifest.xml
+INJECTED from /Users/android/Downloads/Integrity-Check/app/src/main/AndroidManifest.xml
+MERGED from [com.github.vickypathak123:Integrity-Check:1.0.1] /Users/android/.gradle/caches/transforms-3/572533dbe98985a1ab38c21fc3858f81/transformed/Integrity-Check-1.0.1/AndroidManifest.xml:5:5-44
+MERGED from [com.github.vickypathak123:Integrity-Check:1.0.1] /Users/android/.gradle/caches/transforms-3/572533dbe98985a1ab38c21fc3858f81/transformed/Integrity-Check-1.0.1/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.material:material:1.10.0] /Users/android/.gradle/caches/transforms-3/c74c5a1de2362fed924e72683e06a60d/transformed/material-1.10.0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.material:material:1.10.0] /Users/android/.gradle/caches/transforms-3/c74c5a1de2362fed924e72683e06a60d/transformed/material-1.10.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /Users/android/.gradle/caches/transforms-3/28182e3fb7cf4d36b5e55981522b0007/transformed/appcompat-resources-1.6.1/AndroidManifest.xml:20:5-44
@@ -222,23 +222,23 @@ MERGED from [androidx.print:print:1.0.0] /Users/android/.gradle/caches/transform
 MERGED from [androidx.multidex:multidex:2.0.1] /Users/android/.gradle/caches/transforms-3/80e63d30f8793e6c1b99c6c2b63ffeae/transformed/multidex-2.0.1/AndroidManifest.xml:20:5-43
 MERGED from [androidx.multidex:multidex:2.0.1] /Users/android/.gradle/caches/transforms-3/80e63d30f8793e6c1b99c6c2b63ffeae/transformed/multidex-2.0.1/AndroidManifest.xml:20:5-43
 	android:targetSdkVersion
-		INJECTED from /Users/android/Downloads/new/IntegrityCheck/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/android/Downloads/Integrity-Check/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /Users/android/Downloads/new/IntegrityCheck/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/android/Downloads/Integrity-Check/app/src/main/AndroidManifest.xml
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from [:integritycheck] /Users/android/Downloads/new/IntegrityCheck/integritycheck/build/intermediates/merged_manifest/debug/AndroidManifest.xml:7:5-79
+ADDED from [com.github.vickypathak123:Integrity-Check:1.0.1] /Users/android/.gradle/caches/transforms-3/572533dbe98985a1ab38c21fc3858f81/transformed/Integrity-Check-1.0.1/AndroidManifest.xml:7:5-79
 	android:name
-		ADDED from [:integritycheck] /Users/android/Downloads/new/IntegrityCheck/integritycheck/build/intermediates/merged_manifest/debug/AndroidManifest.xml:7:22-76
+		ADDED from [com.github.vickypathak123:Integrity-Check:1.0.1] /Users/android/.gradle/caches/transforms-3/572533dbe98985a1ab38c21fc3858f81/transformed/Integrity-Check-1.0.1/AndroidManifest.xml:7:22-76
 uses-permission#android.permission.INTERNET
-ADDED from [:integritycheck] /Users/android/Downloads/new/IntegrityCheck/integritycheck/build/intermediates/merged_manifest/debug/AndroidManifest.xml:8:5-67
+ADDED from [com.github.vickypathak123:Integrity-Check:1.0.1] /Users/android/.gradle/caches/transforms-3/572533dbe98985a1ab38c21fc3858f81/transformed/Integrity-Check-1.0.1/AndroidManifest.xml:8:5-67
 	android:name
-		ADDED from [:integritycheck] /Users/android/Downloads/new/IntegrityCheck/integritycheck/build/intermediates/merged_manifest/debug/AndroidManifest.xml:8:22-64
+		ADDED from [com.github.vickypathak123:Integrity-Check:1.0.1] /Users/android/.gradle/caches/transforms-3/572533dbe98985a1ab38c21fc3858f81/transformed/Integrity-Check-1.0.1/AndroidManifest.xml:8:22-64
 meta-data#preloaded_fonts
-ADDED from [:integritycheck] /Users/android/Downloads/new/IntegrityCheck/integritycheck/build/intermediates/merged_manifest/debug/AndroidManifest.xml:17:9-19:57
+ADDED from [com.github.vickypathak123:Integrity-Check:1.0.1] /Users/android/.gradle/caches/transforms-3/572533dbe98985a1ab38c21fc3858f81/transformed/Integrity-Check-1.0.1/AndroidManifest.xml:17:9-19:57
 	android:resource
-		ADDED from [:integritycheck] /Users/android/Downloads/new/IntegrityCheck/integritycheck/build/intermediates/merged_manifest/debug/AndroidManifest.xml:19:13-54
+		ADDED from [com.github.vickypathak123:Integrity-Check:1.0.1] /Users/android/.gradle/caches/transforms-3/572533dbe98985a1ab38c21fc3858f81/transformed/Integrity-Check-1.0.1/AndroidManifest.xml:19:13-54
 	android:name
-		ADDED from [:integritycheck] /Users/android/Downloads/new/IntegrityCheck/integritycheck/build/intermediates/merged_manifest/debug/AndroidManifest.xml:18:13-43
+		ADDED from [com.github.vickypathak123:Integrity-Check:1.0.1] /Users/android/.gradle/caches/transforms-3/572533dbe98985a1ab38c21fc3858f81/transformed/Integrity-Check-1.0.1/AndroidManifest.xml:18:13-43
 provider#androidx.startup.InitializationProvider
 ADDED from [androidx.emoji2:emoji2:1.2.0] /Users/android/.gradle/caches/transforms-3/cae3cfcc03f26baf61fafa199d093621/transformed/emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
 MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] /Users/android/.gradle/caches/transforms-3/d8457e413949deda50646c8dea519766/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:24:9-32:20

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.safetynet.app-mergeDebugResources-30:/values-si/values-si.xml",
+            "outputFile": "com.safetynet.app-mergeDebugResources-31:/values-si/values-si.xml",
             "map": [
                 {
                     "source": "/Users/android/.gradle/caches/transforms-3/6548028d24b3b32ade5824344167f9bf/transformed/play-services-basement-18.1.0/res/values-si/values.xml",

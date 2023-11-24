@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.safetynet.app-mergeDebugResources-30:/values-kk/values-kk.xml",
+            "outputFile": "com.safetynet.app-mergeDebugResources-31:/values-kk/values-kk.xml",
             "map": [
                 {
                     "source": "/Users/android/.gradle/caches/transforms-3/9ec33572cd69897e18278038775e970c/transformed/core-1.12.0/res/values-kk/values-kk.xml",
