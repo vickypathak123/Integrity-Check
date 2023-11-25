@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "com.safetynet.integritycheck-merged_res-32:/layout-watch-v20/abc_alert_dialog_button_bar_material.xml",
+        "source": "com.safetynet.integritycheck-appcompat-1.6.1-18:/layout-watch-v20/abc_alert_dialog_button_bar_material.xml"
+    },
+    {
+        "merged": "com.safetynet.integritycheck-merged_res-32:/layout-watch-v20/abc_alert_dialog_title_material.xml",
+        "source": "com.safetynet.integritycheck-appcompat-1.6.1-18:/layout-watch-v20/abc_alert_dialog_title_material.xml"
+    }
+]

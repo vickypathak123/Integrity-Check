@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "com.safetynet.integritycheck-merged_res-32:/mipmap-anydpi-v26/ic_launcher_round.xml",
+        "source": "com.safetynet.integritycheck-main-33:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.safetynet.integritycheck-merged_res-32:/mipmap-anydpi-v26/ic_launcher.xml",
+        "source": "com.safetynet.integritycheck-main-33:/mipmap-anydpi-v26/ic_launcher.xml"
+    }
+]

@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "com.safetynet.integritycheck-merged_res-32:/font/roboto_thin.xml",
+        "source": "com.safetynet.integritycheck-main-33:/font/roboto_thin.xml"
+    },
+    {
+        "merged": "com.safetynet.integritycheck-merged_res-32:/font/roboto.xml",
+        "source": "com.safetynet.integritycheck-main-33:/font/roboto.xml"
+    }
+]

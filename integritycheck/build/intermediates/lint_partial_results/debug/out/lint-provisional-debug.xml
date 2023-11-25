@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 8.1.3" type="conditional_incidents">
+
+    <incident
+        id="FontValidation"
+        severity="warning"
+        message="For `minSdkVersion`=23 only `android:` attributes should be used">
+        <fix-attribute
+            description="Delete fontProviderAuthority"
+            namespace="http://schemas.android.com/apk/res-auto"
+            attribute="fontProviderAuthority"/>
+        <location
+            file="${:integritycheck*debug*sourceProvider*0*resDir*0}/font/roboto.xml"
+            line="3"
+            column="9"
+            startOffset="112"
+            endLine="3"
+            endColumn="65"
+            endOffset="168"/>
+        <map>
+            <entry
+                name="unexpected-ns"
+                boolean="false"/>
+        </map>
+    </incident>
+
+    <incident
+        id="FontValidation"
+        severity="warning"
+        message="For `minSdkVersion`=23 only `android:` attributes should be used">
+        <fix-attribute
+            description="Delete fontProviderAuthority"
+            namespace="http://schemas.android.com/apk/res-auto"
+            attribute="fontProviderAuthority"/>
+        <location
+            file="${:integritycheck*debug*sourceProvider*0*resDir*0}/font/roboto_thin.xml"
+            line="3"
+            column="9"
+            startOffset="112"
+            endLine="3"
+            endColumn="65"
+            endOffset="168"/>
+        <map>
+            <entry
+                name="unexpected-ns"
+                boolean="false"/>
+        </map>
+    </incident>
+
+    <incident
+        id="RtlHardcoded"
+        severity="warning"
+        message="Use &quot;`start`&quot; instead of &quot;`left`&quot; to ensure correct behavior in right-to-left locales">
+        <location
+            file="${:integritycheck*debug*sourceProvider*0*resDir*0}/layout/dialog_play_integrity.xml"
+            line="10"
+            column="22"
+            startOffset="536"
+            endLine="10"
+            endColumn="129"
+            endOffset="643"/>
+        <map>
+            <entry
+                name="applies"
+                int="2"/>
+        </map>
+    </incident>
+
+    <incident
+        id="RtlHardcoded"
+        severity="warning"
+        message="Use &quot;`start`&quot; instead of &quot;`left`&quot; to ensure correct behavior in right-to-left locales">
+        <location
+            file="${:integritycheck*debug*sourceProvider*0*resDir*0}/layout/dialog_play_integrity.xml"
+            line="6"
+            column="29"
+            startOffset="303"
+            endLine="6"
+            endColumn="136"
+            endOffset="410"/>
+        <map>
+            <entry
+                name="applies"
+                int="2"/>
+        </map>
+    </incident>
+
+    <incident
+        id="RtlHardcoded"
+        severity="warning"
+        message="Use &quot;`start`&quot; instead of &quot;`left`&quot; to ensure correct behavior in right-to-left locales">
+        <location
+            file="${:integritycheck*debug*sourceProvider*0*resDir*0}/layout/dialog_play_integrity.xml"
+            line="28"
+            column="30"
+            startOffset="1328"
+            endLine="28"
+            endColumn="137"
+            endOffset="1435"/>
+        <map>
+            <entry
+                name="applies"
+                int="2"/>
+        </map>
+    </incident>
+
+    <incident
+        id="RtlHardcoded"
+        severity="warning"
+        message="Use &quot;`start`&quot; instead of &quot;`left`&quot; to ensure correct behavior in right-to-left locales">
+        <location
+            file="${:integritycheck*debug*sourceProvider*0*resDir*0}/layout/dialog_play_integrity.xml"
+            line="27"
+            column="37"
+            startOffset="1190"
+            endLine="27"
+            endColumn="144"
+            endOffset="1297"/>
+        <map>
+            <entry
+                name="applies"
+                int="2"/>
+        </map>
+    </incident>
+
+    <incident
+        id="RtlHardcoded"
+        severity="warning"
+        message="Use &quot;`start`&quot; instead of &quot;`left`&quot; to ensure correct behavior in right-to-left locales">
+        <location
+            file="${:integritycheck*debug*sourceProvider*0*resDir*0}/layout/dialog_play_integrity.xml"
+            line="49"
+            column="34"
+            startOffset="2306"
+            endLine="49"
+            endColumn="45"
+            endOffset="2317"/>
+        <map>
+            <entry
+                name="applies"
+                int="2"/>
+        </map>
+    </incident>
+
+    <incident
+        id="UnusedAttribute"
+        severity="warning"
+        message="">
+        <fix-data minSdk="ffffffffffc00000" requiresApi="fffffffffe000000"/>
+        <location
+            file="${:integritycheck*debug*sourceProvider*0*resDir*0}/layout/dialog_play_integrity.xml"
+            line="50"
+            column="17"
+            startOffset="2335"
+            endLine="50"
+            endColumn="55"
+            endOffset="2373"/>
+        <map>
+            <api-levels id="minSdk"
+                value="ffffffffffc00000"/>
+            <api-levels id="requiresApi"
+                value="fffffffffe000000"/>
+            <entry
+                name="message"
+                string="Attribute `justificationMode` is only used in API level 26 and higher (current min is %1$s)"/>
+        </map>
+    </incident>
+
+    <incident
+        id="InlinedApi"
+        severity="warning"
+        message="">
+        <fix-data minSdk="fffffffffe000000" requiresApi="fffffffff0000000"/>
+        <location
+            file="${:integritycheck*debug*sourceProvider*0*javaDir*0}/com/safetynet/integritycheck/integrity/AppProtector.kt"
+            line="364"
+            column="37"
+            startOffset="14551"
+            endLine="364"
+            endColumn="78"
+            endOffset="14592"/>
+        <map>
+            <api-levels id="minSdk"
+                value="fffffffffe000000"/>
+            <api-levels id="requiresApi"
+                value="fffffffff0000000"/>
+            <entry
+                name="message"
+                string="Field requires API level 29 (current min is %1$s): `android.graphics.text.LineBreaker#JUSTIFICATION_MODE_INTER_WORD`"/>
+        </map>
+    </incident>
+
+    <incident
+        id="InlinedApi"
+        severity="warning"
+        message="">
+        <fix-data minSdk="fffffffffe000000" requiresApi="fffffffff0000000"/>
+        <location
+            file="${:integritycheck*debug*sourceProvider*0*javaDir*0}/com/safetynet/integritycheck/integrity/AppProtector.kt"
+            line="364"
+            column="37"
+            startOffset="14551"
+            endLine="364"
+            endColumn="78"
+            endOffset="14592"/>
+        <map>
+            <api-levels id="minSdk"
+                value="fffffffffe000000"/>
+            <api-levels id="requiresApi"
+                value="fffffffff0000000"/>
+            <entry
+                name="message"
+                string="Field requires API level 29 (current min is %1$s): `android.graphics.text.LineBreaker#JUSTIFICATION_MODE_INTER_WORD`"/>
+        </map>
+    </incident>
+
+    <incident
+        id="DuplicatePlatformClasses"
+        severity="fatal"
+        message="`commons-logging` defines classes that conflict with classes now provided by Android. Solutions include finding newer versions or alternative libraries that don&apos;t have the same problem (for example, for `httpclient` use `HttpUrlConnection` or `okhttp` instead), or repackaging the library using something like `jarjar`.">
+        <location
+            file="${:integritycheck*projectDir}/build.gradle.kts"/>
+    </incident>
+
+    <incident
+        id="DuplicatePlatformClasses"
+        severity="fatal"
+        message="`httpclient` defines classes that conflict with classes now provided by Android. Solutions include finding newer versions or alternative libraries that don&apos;t have the same problem (for example, for `httpclient` use `HttpUrlConnection` or `okhttp` instead), or repackaging the library using something like `jarjar`.">
+        <location
+            file="${:integritycheck*projectDir}/build.gradle.kts"/>
+    </incident>
+
+</incidents>
