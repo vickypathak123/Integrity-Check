@@ -33,6 +33,9 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
+    buildFeatures {
+        buildConfig = true
+    }
 }
 
 dependencies {
@@ -56,10 +59,13 @@ dependencies {
             strictly("31.1-android")
         }
     }
-//  Google Authentication
+    //  Google Authentication
     implementation ("com.google.api-client:google-api-client-jackson2:1.20.0")
     implementation ("com.google.auth:google-auth-library-credentials:1.20.0")
     implementation ("com.google.auth:google-auth-library-oauth2-http:1.20.0")
+
+    //  Admob Consent
+    implementation ("com.google.android.ump:user-messaging-platform:2.1.0")
 }
 
 afterEvaluate {
@@ -69,7 +75,7 @@ afterEvaluate {
                 from(components["release"])
                 groupId = "com.github.vickypathak123"
                 artifactId = "Integrity-Check"
-                version = "1.0.3"
+                version = "1.0.4"
             }
         }
     }

@@ -1,25 +1,8 @@
 {
     "logs": [
         {
-            "outputFile": "com.safetynet.app-mergeDebugResources-31:/values-bg/values-bg.xml",
+            "outputFile": "com.safetynet.app-mergeDebugResources-32:/values-bg/values-bg.xml",
             "map": [
-                {
-                    "source": "/Users/android/.gradle/caches/transforms-3/6548028d24b3b32ade5824344167f9bf/transformed/play-services-basement-18.1.0/res/values-bg/values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "195",
-                        "endColumns": "133",
-                        "endOffsets": "328"
-                    },
-                    "to": {
-                        "startLines": "48",
-                        "startColumns": "4",
-                        "startOffsets": "4595",
-                        "endColumns": "137",
-                        "endOffsets": "4728"
-                    }
-                },
                 {
                     "source": "/Users/android/.gradle/caches/transforms-3/a3fac2191125c3dc9a36bc5aa23fb637/transformed/appcompat-1.6.1/res/values-bg/values-bg.xml",
                     "from": {
@@ -71,6 +54,23 @@
                         "endLines": "5,33,34,35,36,37,45,46,47,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108",
                         "endColumns": "12,78,78,82,121,109,94,132,88,65,96,79,61,88,62,64,58,72,62,53,127,56,61,53,72,142,83,87,135,87,87,135,84,76,52,50,65,74,75,85,78,76,75,76,73,111,90,74,90,91,73,86,90,54,81,65,82,85,61,63,62,69,116,111,110,109,56,54,85",
                         "endOffsets": "310,3138,3217,3300,3422,3532,4368,4501,4590,4794,4891,4971,5033,5122,5185,5250,5309,5382,5445,5499,5627,5684,5746,5800,5873,6016,6100,6188,6324,6412,6500,6636,6721,6798,6851,6902,6968,7043,7119,7205,7284,7361,7437,7514,7588,7700,7791,7866,7957,8049,8123,8210,8301,8356,8438,8504,8587,8673,8735,8799,8862,8932,9049,9161,9272,9382,9439,9494,9580"
+                    }
+                },
+                {
+                    "source": "/Users/android/.gradle/caches/transforms-3/b890f5c2b7f6988afbfd87d5e4e1e5cc/transformed/jetified-play-services-basement-18.1.0/res/values-bg/values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "195",
+                        "endColumns": "133",
+                        "endOffsets": "328"
+                    },
+                    "to": {
+                        "startLines": "48",
+                        "startColumns": "4",
+                        "startOffsets": "4595",
+                        "endColumns": "137",
+                        "endOffsets": "4728"
                     }
                 }
             ]

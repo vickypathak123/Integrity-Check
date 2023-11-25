@@ -1,0 +1,6 @@
+/Users/android/Downloads/Integrity-Check/integritycheck/src/main/java/com/safetynet/integritycheck/Interface/CheckPlayIntegrityStatus.kt
+/Users/android/Downloads/Integrity-Check/integritycheck/src/main/java/com/safetynet/integritycheck/utils/AlertPlayIntegrityDialog.kt
+/Users/android/Downloads/Integrity-Check/integritycheck/src/main/java/com/safetynet/integritycheck/utils/Config.kt
+/Users/android/Downloads/Integrity-Check/integritycheck/src/main/java/com/safetynet/integritycheck/google_consent/GoogleMobileAdsConsentManager.kt
+/Users/android/Downloads/Integrity-Check/integritycheck/src/main/java/com/safetynet/integritycheck/integrity/AppProtector.kt
+/Users/android/Downloads/Integrity-Check/integritycheck/src/main/java/com/safetynet/integritycheck/Interface/LinkTextClick.kt

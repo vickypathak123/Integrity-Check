@@ -25,7 +25,7 @@ import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.res.ResourcesCompat
-import androidx.multidex.BuildConfig
+
 import com.google.android.play.core.integrity.IntegrityManagerFactory
 import com.google.android.play.core.integrity.IntegrityServiceException
 import com.google.android.play.core.integrity.IntegrityTokenRequest
@@ -41,11 +41,13 @@ import com.google.auth.oauth2.GoogleCredentials
 import com.safetynet.integritycheck.Interface.CheckPlayIntegrityStatus
 import com.safetynet.integritycheck.Interface.LinkTextClick
 import com.safetynet.integritycheck.R
+import com.safetynet.integritycheck.google_consent.GoogleMobileAdsConsentManager
 import com.safetynet.integritycheck.utils.Config
 import com.safetynet.integritycheck.utils.PlayIntegrityDialog
 
 import java.text.SimpleDateFormat
 import java.util.Date
+import java.util.concurrent.atomic.AtomicBoolean
 import kotlin.system.exitProcess
 
 /**
@@ -64,6 +66,10 @@ class CheckIntegrity(private val context: Context) {
 
     private var packageName: String = ""
     private var appName: String = ""
+    private var deviceId: String = ""
+    private var isEnableDebugMode: Boolean = false
+    private val isMobileAdsInitializeCalled = AtomicBoolean(false)
+    private lateinit var googleMobileAdsConsentManager: GoogleMobileAdsConsentManager
 
     @JvmName("appName")
     fun appName(appName: String) = this@CheckIntegrity.apply {
@@ -73,6 +79,16 @@ class CheckIntegrity(private val context: Context) {
     @JvmName("packageName")
     fun packageName(packageName: String) = this@CheckIntegrity.apply {
         this.packageName = packageName
+    }
+
+    @JvmName("deviceId")
+    fun deviceId(deviceId: String) = this@CheckIntegrity.apply {
+        this.deviceId = deviceId
+    }
+
+    @JvmName("isEnableDebugMode")
+    fun isEnableDebugMode(isEnableDebugMode: Boolean) = this@CheckIntegrity.apply {
+        this.isEnableDebugMode = isEnableDebugMode
     }
 
 
@@ -114,8 +130,29 @@ class CheckIntegrity(private val context: Context) {
                             }
 
                             LICENSE.SAFE, LICENSE.ERROR, LICENSE.OLD_PLAY_STORE -> {
-                                checkPlayIntegrityStatus.onSuccess()
                                 logShow("LICENSE SAFE or OLD_PLAY_STORE or ERROR")
+                                googleMobileAdsConsentManager =
+                                    GoogleMobileAdsConsentManager.getInstance(context)
+                                googleMobileAdsConsentManager.gatherConsent(
+                                    context as Activity,
+                                    deviceId,
+                                    isEnableDebugMode
+                                ) { consentError ->
+                                    if (consentError != null) {
+                                        // Consent not obtained in current session.
+                                        logShow("ERROR ${consentError.errorCode}. ${consentError.message}")
+                                    }
+                                    logShow("RESULT ${consentError?.errorCode}. ${consentError?.message}")
+
+                                    if (googleMobileAdsConsentManager.canRequestAds) {
+                                        if (isMobileAdsInitializeCalled.getAndSet(true)) {
+                                            logShow("ERROR ${consentError?.errorCode}. ${consentError?.message}")
+                                        } else {
+                                            checkPlayIntegrityStatus.onSuccess()
+                                        }
+                                    }
+                                }
+
                             }
                         }
                     }
@@ -149,14 +186,18 @@ private fun requestIntegrityToken(
                 callback(LICENSE.NOT_SAFE)
             }
             (context as Activity).runOnUiThread {
-                Toast.makeText(context, "old request", Toast.LENGTH_SHORT).show()
+                if (com.safetynet.integritycheck.BuildConfig.DEBUG) {
+                    Toast.makeText(context, "old request", Toast.LENGTH_SHORT).show()
+                }
             }
             return
         } else {
             context.config.isToday = context.getDate()
         }
         (context as Activity).runOnUiThread {
-            Toast.makeText(context, "new request", Toast.LENGTH_SHORT).show()
+            if (com.safetynet.integritycheck.BuildConfig.DEBUG) {
+                Toast.makeText(context, "new request", Toast.LENGTH_SHORT).show()
+            }
         }
         val myIntegrityManager = IntegrityManagerFactory.create(context)
         val myIntegrityTokenResponse = myIntegrityManager.requestIntegrityToken(
@@ -169,7 +210,7 @@ private fun requestIntegrityToken(
         myIntegrityTokenResponse.addOnFailureListener { exception ->
             try {
                 val errorMessage = getErrorText(exception as IntegrityServiceException)
-                if (BuildConfig.DEBUG) {
+                if (com.safetynet.integritycheck.BuildConfig.DEBUG) {
                     Toast.makeText(context, "error failure $errorMessage", Toast.LENGTH_SHORT)
                         .show()
                 }

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.safetynet.app-mergeDebugResources-31:/values-en-rXC/values-en-rXC.xml",
+            "outputFile": "com.safetynet.app-mergeDebugResources-32:/values-en-rXC/values-en-rXC.xml",
             "map": [
                 {
                     "source": "/Users/android/.gradle/caches/transforms-3/9ec33572cd69897e18278038775e970c/transformed/core-1.12.0/res/values-en-rXC/values-en-rXC.xml",
