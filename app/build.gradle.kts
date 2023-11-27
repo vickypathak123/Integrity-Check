@@ -38,7 +38,7 @@ android {
         exclude("META-INF/DEPENDENCIES")
     }
 }
-
+val integrityVersion: String by rootProject.extra
 dependencies {
 
     implementation("androidx.core:core-ktx:1.12.0")
@@ -49,6 +49,6 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
-//    implementation(project(":integritycheck"))
-    implementation("com.github.vickypathak123:Integrity-Check:1.0.6")
+    implementation(project(":integritycheck"))
+//    implementation("com.github.vickypathak123:Integrity-Check:$integrityVersion")
 }

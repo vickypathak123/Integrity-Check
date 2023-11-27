@@ -67,7 +67,7 @@ dependencies {
     //  Admob Consent
     implementation ("com.google.android.ump:user-messaging-platform:2.1.0")
 }
-
+val integrityVersion: String by rootProject.extra
 afterEvaluate {
     publishing {
         publications {
@@ -75,7 +75,7 @@ afterEvaluate {
                 from(components["release"])
                 groupId = "com.github.vickypathak123"
                 artifactId = "Integrity-Check"
-                version = "1.0.6"
+                version = integrityVersion
             }
         }
     }
