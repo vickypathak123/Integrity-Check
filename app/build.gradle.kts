@@ -50,5 +50,5 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
 //    implementation(project(":integritycheck"))
-    implementation("com.github.vickypathak123:Integrity-Check:$integrityVersion")
+    implementation("com.github.vickypathak123:Integrity-Check:1.0.5")
 }
