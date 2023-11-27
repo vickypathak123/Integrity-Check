@@ -9,7 +9,6 @@ import com.google.android.ump.ConsentInformation
 import com.google.android.ump.ConsentRequestParameters
 import com.google.android.ump.FormError
 import com.google.android.ump.UserMessagingPlatform
-import com.safetynet.integritycheck.BuildConfig
 
 
 class GoogleMobileAdsConsentManager private constructor(context: Context) {
@@ -39,23 +38,25 @@ class GoogleMobileAdsConsentManager private constructor(context: Context) {
      */
     fun gatherConsent(
         activity: Activity,
-        deviceId:String,
-        isDebug:Boolean,
+        deviceId: String,
+        isDebug: Boolean,
         onConsentGatheringCompleteListener: OnConsentGatheringCompleteListener
     ) {
         // For testing purposes, you can force a DebugGeography of EEA or NOT_EEA.
-        val debugSettings =
-            ConsentDebugSettings.Builder(activity)
-                .setDebugGeography(ConsentDebugSettings.DebugGeography.DEBUG_GEOGRAPHY_EEA)
-                // Check your logcat output for the hashed device ID e.g.
-                // "Use new ConsentDebugSettings.Builder().addTestDeviceHashedId("ABCDEF012345")" to use
-                // the debug functionality.
-                .addTestDeviceHashedId(deviceId)
-                .build()
 
-        val params = ConsentRequestParameters.Builder()
-            .setConsentDebugSettings(if (isDebug) debugSettings else null).build()
-
+        val params = if (isDebug) {
+            val debugSettings =
+                ConsentDebugSettings.Builder(activity)
+                    .setDebugGeography(ConsentDebugSettings.DebugGeography.DEBUG_GEOGRAPHY_EEA)
+                    // Check your logcat output for the hashed device ID e.g.
+                    // "Use new ConsentDebugSettings.Builder().addTestDeviceHashedId("ABCDEF012345")" to use
+                    // the debug functionality.
+                    .addTestDeviceHashedId(deviceId)
+                    .build()
+            ConsentRequestParameters.Builder().setConsentDebugSettings(debugSettings).build()
+        } else {
+            ConsentRequestParameters.Builder().build()
+        }
         // Requesting an update to consent information should be called on every app launch.
         consentInformation.requestConsentInfoUpdate(
             activity,

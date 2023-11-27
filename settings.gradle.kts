@@ -17,4 +17,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Integrity Check"
 include(":app")
-include(":integritycheck")
+//include(":integritycheck")
