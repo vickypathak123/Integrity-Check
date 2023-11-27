@@ -75,7 +75,7 @@ afterEvaluate {
                 from(components["release"])
                 groupId = "com.github.vickypathak123"
                 artifactId = "Integrity-Check"
-                version = "1.0.5"
+                version = "1.0.6"
             }
         }
     }
