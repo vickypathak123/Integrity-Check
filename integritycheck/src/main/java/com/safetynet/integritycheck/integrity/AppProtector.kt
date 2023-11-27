@@ -131,26 +131,33 @@ class CheckIntegrity(private val context: Context) {
 
                             LICENSE.SAFE, LICENSE.ERROR, LICENSE.OLD_PLAY_STORE -> {
                                 logShow("LICENSE SAFE or OLD_PLAY_STORE or ERROR")
-                                googleMobileAdsConsentManager =
-                                    GoogleMobileAdsConsentManager.getInstance(context)
-                                googleMobileAdsConsentManager.gatherConsent(
-                                    context as Activity,
-                                    deviceId,
-                                    isEnableDebugMode
-                                ) { consentError ->
-                                    if (consentError != null) {
-                                        // Consent not obtained in current session.
-                                        logShow("ERROR ${consentError.errorCode}. ${consentError.message}")
-                                    }
-                                    logShow("RESULT ${consentError?.errorCode}. ${consentError?.message}")
+                                if (context.config.isCheckConsent) {
+                                    context.config.isCheckConsent = false
+                                    googleMobileAdsConsentManager =
+                                        GoogleMobileAdsConsentManager.getInstance(context)
+                                    googleMobileAdsConsentManager.gatherConsent(
+                                        context as Activity,
+                                        deviceId,
+                                        isEnableDebugMode
+                                    ) { consentError ->
+                                        if (consentError != null) {
+                                            // Consent not obtained in current session.
+                                            logShow("ERROR ${consentError.errorCode}. ${consentError.message}")
+                                        }
+                                        logShow("RESULT ${consentError?.errorCode}. ${consentError?.message}")
 
-                                    if (googleMobileAdsConsentManager.canRequestAds) {
-                                        if (isMobileAdsInitializeCalled.getAndSet(true)) {
-                                            logShow("ERROR ${consentError?.errorCode}. ${consentError?.message}")
+                                        if (googleMobileAdsConsentManager.canRequestAds) {
+                                            if (isMobileAdsInitializeCalled.getAndSet(true)) {
+                                                logShow("ERROR ${consentError?.errorCode}. ${consentError?.message}")
+                                            } else {
+                                                checkPlayIntegrityStatus.onSuccess()
+                                            }
                                         } else {
                                             checkPlayIntegrityStatus.onSuccess()
                                         }
                                     }
+                                } else {
+                                    checkPlayIntegrityStatus.onSuccess()
                                 }
 
                             }

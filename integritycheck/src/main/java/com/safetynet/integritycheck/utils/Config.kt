@@ -12,6 +12,9 @@ class Config(context: Context) {
         fun newInstance(context: Context) = Config(context)
     }
 
+    var isCheckConsent: Boolean
+        get() = prefs.getBoolean("IS_CHECK_CONSENT", true)
+        set(isCheck) = prefs.edit().putBoolean("IS_CHECK_CONSENT", isCheck).apply()
     var isPlayIntegrityCheck: Boolean
         get() = prefs.getBoolean("IS_PLAY_INTEGRITY_CHECK", false)
         set(isCheck) = prefs.edit().putBoolean("IS_PLAY_INTEGRITY_CHECK", isCheck).apply()

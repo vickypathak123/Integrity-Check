@@ -1,9 +1,11 @@
 package com.safetynet
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.safetynet.integritycheck.Interface.CheckPlayIntegrityStatus
 import com.safetynet.integritycheck.integrity.AppProtector
+import kotlin.math.log
 
 
 class MainActivity : AppCompatActivity() {
@@ -12,6 +14,7 @@ class MainActivity : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        Log.e("parth", "onCreate: " )
         AppProtector
             .with(this)
             .appName(getString(R.string.app_name))
