@@ -4,7 +4,7 @@ plugins {
     id("com.android.library") version "8.1.3" apply false
     id("org.jetbrains.kotlin.android") version "1.9.20" apply false
 }
-val integrityVersion by extra { "1.0.9" }
+val integrityVersion by extra { "1.1.0" }
 configurations.all {
     resolutionStrategy {
         cacheChangingModulesFor(0, TimeUnit.SECONDS)

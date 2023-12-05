@@ -1,6 +1,3 @@
-int array com_google_android_gms_fonts_certs 0x0
-int array com_google_android_gms_fonts_certs_dev 0x0
-int array com_google_android_gms_fonts_certs_prod 0x0
 int color app_bg 0x0
 int color black 0x0
 int color colorPrimary 0x0
