@@ -10,12 +10,13 @@ import com.google.android.ump.ConsentRequestParameters
 import com.google.android.ump.FormError
 import com.google.android.ump.UserMessagingPlatform
 
-
+/**
+ * @author Madhuri Patoliya
+ * @since 25 Nov 2023
+ */
 class GoogleMobileAdsConsentManager private constructor(context: Context) {
     private val consentInformation: ConsentInformation =
         UserMessagingPlatform.getConsentInformation(context)
-
-    private val TAG = GoogleMobileAdsConsentManager::class.java.simpleName
 
     /** Interface definition for a callback to be invoked when consent gathering is complete. */
     fun interface OnConsentGatheringCompleteListener {
@@ -65,15 +66,19 @@ class GoogleMobileAdsConsentManager private constructor(context: Context) {
                 UserMessagingPlatform.loadAndShowConsentFormIfRequired(activity) { formError ->
                     // Consent has been gathered.
                     onConsentGatheringCompleteListener.consentGatheringComplete(formError)
-                    Log.e(TAG, "gatherConsent:  Consent grant")
+                    logShow("gatherConsent:  Consent grant")
 
                 }
             },
             { requestConsentError ->
                 onConsentGatheringCompleteListener.consentGatheringComplete(requestConsentError)
-                Log.e(TAG, "gatherConsent:  Consent Fail")
+                logShow("gatherConsent:  Consent Fail")
             }
         )
+    }
+
+    private fun logShow(msg: String) {
+        Log.e("Google-Consent", msg)
     }
 
     /** Helper method to call the UMP SDK method to show the privacy options form. */

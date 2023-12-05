@@ -43,6 +43,9 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-9939518381636264~8191772326" />
 
         <provider
             android:name="androidx.startup.InitializationProvider"

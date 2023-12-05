@@ -1,0 +1,15 @@
+com.safetynet.integritycheck.BuildConfig
+com.safetynet.integritycheck.Interface.CheckPlayIntegrityStatus
+com.safetynet.integritycheck.google_consent.GoogleMobileAdsConsentManager$Companion
+com.safetynet.integritycheck.google_consent.GoogleMobileAdsConsentManager$OnConsentGatheringCompleteListener
+com.safetynet.integritycheck.google_consent.GoogleMobileAdsConsentManager
+com.safetynet.integritycheck.integrity.AppProtector
+com.safetynet.integritycheck.integrity.AppProtectorKt$requestIntegrityToken$1$1
+com.safetynet.integritycheck.integrity.AppProtectorKt$requestIntegrityToken$1
+com.safetynet.integritycheck.integrity.AppProtectorKt
+com.safetynet.integritycheck.integrity.CheckIntegrity$checkIntegrity$1$1$WhenMappings
+com.safetynet.integritycheck.integrity.CheckIntegrity$checkIntegrity$1$1
+com.safetynet.integritycheck.integrity.CheckIntegrity
+com.safetynet.integritycheck.integrity.LICENSE
+com.safetynet.integritycheck.utils.Config$Companion
+com.safetynet.integritycheck.utils.Config

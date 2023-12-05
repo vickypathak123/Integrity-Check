@@ -4,7 +4,7 @@
             "outputFile": "com.safetynet.app-mergeDebugResources-32:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "/Users/android/Downloads/Integrity-Check/app/src/main/res/values-night/themes.xml",
+                    "source": "/Volumes/Extra/WorkSpace/Integrity-Check/app/src/main/res/values-night/themes.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
