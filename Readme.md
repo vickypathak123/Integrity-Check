@@ -37,6 +37,7 @@ Infotech [Vasundhara Infotech LLP](https://vasundharainfotechllp.com)
 dependencies {
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.0.4")
     implementation 'com.github.vickypathak123:Integrity-Check:Tag'
+    
 }
 ```
 
@@ -48,25 +49,16 @@ dependencies {
 ```kotlin
     AppProtector
     .with(this)
-    .appName(getString(R.string.app_name)) // Your Application Name
+    .appName(getString(R.string.app_name)) // Your Application Name Optional
     .packageName(packageName) //Pass packageName it need to check which you want check Play Integrity
+    .deviceId("") // Pass device id for google consent debug testing
+    .isEnableDebugMode(true) // Pass isEnableDebugMode as true for google consent debug testing
+    .cloudProjectNumber(124354645657) // Pass cloudProjectNumber it need to check Play Integrity  
+    .playIntegrityRemoteConfigJson(string) // Pass playIntegrityRemoteConfigJson it need for testing toast and by pass error verdicts 
+    .playIntegrityRemoteConfigJson(appSharedPrefs.playIntegrity.toString())
     .checkIntegrity(object : CheckPlayIntegrityStatus {
         override fun onSuccess() {
 
         }
     })//using this method check application is safe or not if application is it will callback onSuccess if not it display dialog
-```
-
-#### Need to Initial all Safetynet Dialog Color Attribute in your App Theme
-
-```xml
-
-<style name="YOUR_APP_THEME" parent="Theme.AppCompat.DayNight.NoActionBar">
-    <item name="dialog_title_text_color">@android:color/holo_red_dark</item>
-    <item name="dialog_msg_text_color">@android:color/holo_red_dark</item>
-    <item name="dialog_link_text_color">@android:color/holo_purple</item>
-    <item name="dialog_background_color">@android:color/holo_orange_light</item>
-    <item name="dialog_button_background_color">@android:color/holo_blue_light</item>
-    <item name="dialog_button_text_color">@android:color/holo_orange_dark</item>
-</style>
 ```
