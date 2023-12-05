@@ -1,35 +1,24 @@
 package com.safetynet.integritycheck.integrity
 
 import android.app.Activity
-import android.content.ActivityNotFoundException
 import android.content.Context
-import android.content.Intent
-import android.graphics.Paint
-import android.graphics.Typeface
-import android.graphics.text.LineBreaker
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
-import android.net.Uri
-import android.os.Build
+import android.os.Handler
+import android.os.Looper
 import android.preference.PreferenceManager
-import android.text.Spannable
-import android.text.SpannableString
-import android.text.TextPaint
-import android.text.method.LinkMovementMethod
-import android.text.style.ClickableSpan
-import android.text.style.MetricAffectingSpan
 import android.util.Base64
 import android.util.Log
-import android.util.TypedValue
-import android.view.View
-import android.widget.TextView
 import android.widget.Toast
-import androidx.core.content.res.ResourcesCompat
-
+import com.google.android.gms.common.ConnectionResult
+import com.google.android.gms.common.GoogleApiAvailability
 import com.google.android.play.core.integrity.IntegrityManagerFactory
-import com.google.android.play.core.integrity.IntegrityServiceException
-import com.google.android.play.core.integrity.IntegrityTokenRequest
-import com.google.android.play.core.integrity.model.IntegrityErrorCode
+import com.google.android.play.core.integrity.StandardIntegrityManager
+import com.google.android.play.core.integrity.model.IntegrityDialogResponseCode.DIALOG_CANCELLED
+import com.google.android.play.core.integrity.model.IntegrityDialogResponseCode.DIALOG_FAILED
+import com.google.android.play.core.integrity.model.IntegrityDialogResponseCode.DIALOG_SUCCESSFUL
+import com.google.android.play.core.integrity.model.IntegrityDialogResponseCode.DIALOG_UNAVAILABLE
+import com.google.android.play.core.integrity.model.IntegrityDialogTypeCode.GET_LICENSED
 import com.google.api.client.http.HttpRequestInitializer
 import com.google.api.client.http.javanet.NetHttpTransport
 import com.google.api.client.json.jackson2.JacksonFactory
@@ -39,12 +28,10 @@ import com.google.api.services.playintegrity.v1.model.DecodeIntegrityTokenReques
 import com.google.auth.http.HttpCredentialsAdapter
 import com.google.auth.oauth2.GoogleCredentials
 import com.safetynet.integritycheck.Interface.CheckPlayIntegrityStatus
-import com.safetynet.integritycheck.Interface.LinkTextClick
-import com.safetynet.integritycheck.R
 import com.safetynet.integritycheck.google_consent.GoogleMobileAdsConsentManager
 import com.safetynet.integritycheck.utils.Config
-import com.safetynet.integritycheck.utils.PlayIntegrityDialog
-
+import org.json.JSONArray
+import org.json.JSONObject
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.concurrent.atomic.AtomicBoolean
@@ -67,6 +54,8 @@ class CheckIntegrity(private val context: Context) {
     private var packageName: String = ""
     private var appName: String = ""
     private var deviceId: String = ""
+    private var playIntegrityRemote: String = ""
+    private var cloudProjectNumber: Long = 0
     private var isEnableDebugMode: Boolean = false
     private val isMobileAdsInitializeCalled = AtomicBoolean(false)
     private lateinit var googleMobileAdsConsentManager: GoogleMobileAdsConsentManager
@@ -81,11 +70,27 @@ class CheckIntegrity(private val context: Context) {
         this.packageName = packageName
     }
 
+    /** Helper method to set Cloud project number which you can find from google-services.json file */
+    @JvmName("cloudProjectNumber")
+    fun cloudProjectNumber(cloudProjectNumber: Long) = this@CheckIntegrity.apply {
+        this.cloudProjectNumber = cloudProjectNumber
+    }
+
+    /** Helper method to set Json which you can get from Remote config */
+    @JvmName("playIntegrityRemoteConfigJson")
+    fun playIntegrityRemoteConfigJson(playIntegrityRemote: String) = this@CheckIntegrity.apply {
+        this.playIntegrityRemote = playIntegrityRemote
+    }
+
+    /** Helper method to set deviceId which you can get from logs
+     * it's required field to set debug testing for google-consent */
     @JvmName("deviceId")
     fun deviceId(deviceId: String) = this@CheckIntegrity.apply {
         this.deviceId = deviceId
     }
 
+    /** Helper method to set isEnableDebugMode for set debug testing for google-consent
+     * Params: enabled – True if want to enabled debug mode, false otherwise. */
     @JvmName("isEnableDebugMode")
     fun isEnableDebugMode(isEnableDebugMode: Boolean) = this@CheckIntegrity.apply {
         this.isEnableDebugMode = isEnableDebugMode
@@ -98,34 +103,15 @@ class CheckIntegrity(private val context: Context) {
             try {
                 if (context.isOnline) {
                     logShow("Internet On")
-                    requestIntegrityToken(context, packageName) { licensingVerdict ->
+                    requestIntegrityToken(
+                        context,
+                        packageName,
+                        cloudProjectNumber,
+                        playIntegrityRemote
+                    ) { licensingVerdict ->
                         when (licensingVerdict) {
                             LICENSE.NOT_SAFE -> {
-                                (context as Activity).runOnUiThread {
-                                    PlayIntegrityDialog.show(context, appName, packageName)
-                                    {
-                                        if (!it) {
-                                            val appPackageName = packageName
-                                            try {
-                                                context.startActivity(
-                                                    Intent(
-                                                        Intent.ACTION_VIEW,
-                                                        Uri.parse("market://details?id=$appPackageName")
-                                                    )
-                                                )
-                                            } catch (e: ActivityNotFoundException) {
-                                                context.startActivity(
-                                                    Intent(
-                                                        Intent.ACTION_VIEW,
-                                                        Uri.parse("https://play.google.com/store/apps/details?id=$appPackageName")
-                                                    )
-                                                )
-                                            }
-                                        } else
-                                            context.finishAffinity()
-                                        exitProcess(0)
-                                    }
-                                }
+
                                 logShow("LICENSE NOT_SAFE")
                             }
 
@@ -168,172 +154,205 @@ class CheckIntegrity(private val context: Context) {
         }
 }
 
+private var showError = true
+private var verdictCodeList = arrayListOf<String>()
+
+private fun getCodeList(data: JSONArray): ArrayList<String> {
+    val list = arrayListOf<String>()
+    for (i in 0 until data.length()) {
+        list.add(data.getString(i))
+    }
+    return list
+}
 
 private fun requestIntegrityToken(
     context: Context,
     packageName: String,
+    cloudProjectNumber: Long,
+    playIntegrityRemote: String,
     callback: (LICENSE) -> Unit
 ) {
+
     try {
-        logShow("${context.getDate()}")
-        logShow("${context.config.isToday}")
         logShow("requestIntegrityToken")
 
-        if (context.config.isToday == context.getDate()) {
+        if (playIntegrityRemote.isNotEmpty()) {
+            val obj = JSONObject(playIntegrityRemote)
+            showError = obj.getBoolean("errorHide")
+            if (obj.has("verdictsResponseCodes"))
+                verdictCodeList = getCodeList(obj.getJSONArray("verdictsResponseCodes"))
+        }
+        logShow("showError = $showError  verdictCodeList = $verdictCodeList")
+        logShow("showError = playData ${context.config.playData}")
+        // Create an instance of a manager.
+        val standardIntegrityManager = IntegrityManagerFactory.createStandard(context)
 
-            if (context.config.isPlayIntegrityCheck) {
-                callback(LICENSE.SAFE)
-            } else {
-                callback(LICENSE.NOT_SAFE)
-            }
-            (context as Activity).runOnUiThread {
-                if (com.safetynet.integritycheck.BuildConfig.DEBUG) {
-                    Toast.makeText(context, "old request", Toast.LENGTH_SHORT).show()
-                }
-            }
-            return
-        } else {
-            context.config.isToday = context.getDate()
-        }
-        (context as Activity).runOnUiThread {
-            if (com.safetynet.integritycheck.BuildConfig.DEBUG) {
-                Toast.makeText(context, "new request", Toast.LENGTH_SHORT).show()
-            }
-        }
-        val myIntegrityManager = IntegrityManagerFactory.create(context)
-        val myIntegrityTokenResponse = myIntegrityManager.requestIntegrityToken(
-            IntegrityTokenRequest.builder()
-                .setNonce(generateNonce())
+        var integrityTokenProvider: StandardIntegrityManager.StandardIntegrityTokenProvider
+
+        logShow("Start Integrity")
+        // Prepare integrity token. Can be called once in a while to keep internal
+        // state fresh.
+        standardIntegrityManager.prepareIntegrityToken(
+            StandardIntegrityManager.PrepareIntegrityTokenRequest.builder()
+                .setCloudProjectNumber(cloudProjectNumber)
                 .build()
-
         )
+            .addOnSuccessListener { tokenProvider ->
+                logShow("addOnSuccessListener: integrityTokenProvider=== $tokenProvider")
 
-        myIntegrityTokenResponse.addOnFailureListener { exception ->
-            try {
-                val errorMessage = getErrorText(exception as IntegrityServiceException)
-                if (com.safetynet.integritycheck.BuildConfig.DEBUG) {
-                    Toast.makeText(context, "error failure $errorMessage", Toast.LENGTH_SHORT)
-                        .show()
-                }
-                logShow("addOnFailureListener $errorMessage")
-                when (errorMessage) {
-                    "-100", "-12", "-1", "-9", "-3", "-8" -> {
-                        callback(LICENSE.SAFE)
-                        context.config.isPlayIntegrityCheck = true
-                    }
+                integrityTokenProvider = tokenProvider
 
-                    else -> {
-                        callback(LICENSE.NOT_SAFE)
-                        context.config.isPlayIntegrityCheck = false
-                    }
-                }
-            } catch (e: Exception) {
-                logShow("catch addOnFailureListener $e")
-                logShow("addOnFailureListener $exception")
-                callback(LICENSE.SAFE)
-                context.config.isPlayIntegrityCheck = true
-            }
-        }
-
-
-
-        myIntegrityTokenResponse.addOnCanceledListener {
-            logShow("addOnCanceledListener")
-        }
-
-        myIntegrityTokenResponse.addOnSuccessListener { response ->
-            try {
-                logShow("addOnSuccessListener")
-                val token = response.token()
-                val requestObj = DecodeIntegrityTokenRequest()
-                requestObj.integrityToken = token
-
-                logShow("token : ${token}")
-                logShow("requestObj.integrityToken : ${requestObj.integrityToken}")
-
-
-                logShow("path ${context.javaClass.classLoader?.getResourceAsStream("credentials.json")}")
+// Request integrity token by providing a user action request hash. Can be called
+// several times for different user actions.
+                val requestHash = generateNonce()  /*Settings.Secure.getString(context.contentResolver,
+                    Settings.Secure.ANDROID_ID)*/
+                val integrityTokenResponse = integrityTokenProvider.request(
+                    StandardIntegrityManager.StandardIntegrityTokenRequest.builder()
+                        .setRequestHash(
+                            requestHash
+                        )
+                        .build()
+                )
                 val credentials = GoogleCredentials.fromStream(
                     requireNotNull(context.javaClass.classLoader?.getResourceAsStream("credentials.json"))
                 )
-                val requestInitializer: HttpRequestInitializer = HttpCredentialsAdapter(credentials)
+                integrityTokenResponse
+                    .addOnSuccessListener { response: StandardIntegrityManager.StandardIntegrityToken ->
 
-                val httpTransport = NetHttpTransport()
-                val jsonFactory = JacksonFactory()
-                val initializer = PlayIntegrityRequestInitializer()
+                        logShow("StandardIntegrityToken:  Success === ${response.token()}")
+                        val requestInitializer: HttpRequestInitializer =
+                            HttpCredentialsAdapter(credentials)
+                        val httpTransport = NetHttpTransport()
+                        val jsonFactory = JacksonFactory()
+                        val initializer = PlayIntegrityRequestInitializer()
 
-                val playIntegrity =
-                    PlayIntegrity.Builder(httpTransport, jsonFactory, requestInitializer)
-                        .setApplicationName(packageName)
-                        .setGoogleClientRequestInitializer(initializer)
-                val play = playIntegrity.build()
+                        val playIntegrity =
+                            PlayIntegrity.Builder(httpTransport, jsonFactory, requestInitializer)
+                                .setApplicationName(packageName)
+                                .setGoogleClientRequestInitializer(initializer)
 
-                val thread = Thread {
-                    try {
-                        val apiResponse =
-                            play.v1().decodeIntegrityToken(packageName, requestObj).execute()
-                        logShow("apiResponse: ${apiResponse.tokenPayloadExternal}")
-                        logShow("apiResponse: ${apiResponse.tokenPayloadExternal}")
-                        val accountDetails =
-                            apiResponse.tokenPayloadExternal.accountDetails.appLicensingVerdict
-                        logShow("accountDetails: $accountDetails")
-                        val appIntegrity =
-                            apiResponse.tokenPayloadExternal.appIntegrity.appRecognitionVerdict
-                        logShow("appIntegrity: $appIntegrity")
-                        if (accountDetails == "LICENSED") {
-                            callback(LICENSE.SAFE)
-                            context.config.isPlayIntegrityCheck = true
-                        } else {
-                            callback(LICENSE.NOT_SAFE)
-                            context.config.isPlayIntegrityCheck = false
+                        val play = playIntegrity.build()
+
+                        val thread = Thread {
+                            try {
+                                val content =
+                                    DecodeIntegrityTokenRequest().setIntegrityToken(response.token())
+                                val apiResponse =
+                                    play.v1().decodeIntegrityToken(packageName, content).execute()
+                                logShow("apiResponse: $apiResponse")
+
+                                showToast(context, "apiResponse: $apiResponse")
+
+                                val appLicensingVerdict =
+                                    apiResponse.tokenPayloadExternal.accountDetails.appLicensingVerdict
+
+                                val appRecognitionVerdict =
+                                    apiResponse.tokenPayloadExternal.appIntegrity.appRecognitionVerdict
+
+                                val deviceRecognitionVerdict =
+                                    apiResponse.tokenPayloadExternal.deviceIntegrity.deviceRecognitionVerdict
+
+                                logShow("appLicensingVerdict: $appLicensingVerdict")
+                                logShow("appRecognitionVerdict: $appRecognitionVerdict")
+                                logShow("deviceRecognitionVerdict: $deviceRecognitionVerdict")
+
+                                if (appLicensingVerdict == "LICENSED"
+                                    && appRecognitionVerdict == "PLAY_RECOGNIZED" && deviceRecognitionVerdict[0] == "MEETS_DEVICE_INTEGRITY"
+                                ) {
+                                    callback(LICENSE.SAFE)
+                                    context.config.isPlayIntegrityCheck = true
+                                } else {
+
+
+                                    val isSafeLast = verdictCodeList.isNotEmpty() &&
+                                            (appLicensingVerdict == "LICENSED" || verdictCodeList.contains(
+                                                appLicensingVerdict
+                                            )) &&
+                                            (appRecognitionVerdict == "PLAY_RECOGNIZED" || verdictCodeList.contains(
+                                                appRecognitionVerdict
+                                            )) &&
+                                            (deviceRecognitionVerdict[0] == "MEETS_DEVICE_INTEGRITY" || verdictCodeList.contains(
+                                                deviceRecognitionVerdict[0]
+                                            ))
+
+
+                                    if (isSafeLast) {
+                                        callback(LICENSE.SAFE)
+                                        context.config.isPlayIntegrityCheck = true
+                                        return@Thread
+                                    }
+
+                                    context.config.isPlayIntegrityCheck = false
+                                    response.showDialog(context as Activity?, GET_LICENSED)
+                                        .addOnCanceledListener {
+                                            logShow("Dialog closed")
+                                        }.addOnCompleteListener {
+                                            if (it.result == DIALOG_CANCELLED) {
+                                                logShow("DIALOG_CANCELLED")
+                                                context.finishAffinity()
+                                                exitProcess(0)
+                                            }
+                                            if (it.result == DIALOG_FAILED) {
+                                                logShow("DIALOG_FAILED")
+                                            }
+                                            if (it.result == DIALOG_SUCCESSFUL) {
+                                                logShow("DIALOG_SUCCESSFUL")
+
+                                                requestIntegrityToken(
+                                                    context,
+                                                    packageName,
+                                                    cloudProjectNumber,
+                                                    playIntegrityRemote,
+                                                    callback
+                                                )
+                                            }
+                                            if (it.result == DIALOG_UNAVAILABLE) {
+                                                logShow("DIALOG_UNAVAILABLE")
+                                            }
+
+                                        }.addOnFailureListener {
+                                            logShow("dialog Exception = ${it.message}")
+                                            handleError(it)
+                                        }
+                                }
+                            } catch (e: Exception) {
+                                callback(LICENSE.SAFE)
+                                context.config.isPlayIntegrityCheck = true
+                                logShow("LICENSE.ERROR 1 : ${e.message}")
+                                e.printStackTrace()
+                            }
                         }
-                    } catch (e: Exception) {
-                        callback(LICENSE.SAFE)
-                        context.config.isPlayIntegrityCheck = true
-                        logShow("LICENSE.ERROR 1 : ${e.message}")
-                        e.printStackTrace()
+                        thread.start()
+
                     }
-                }
-                thread.start()
-            } catch (e: Exception) {
-                e.printStackTrace()
-                callback(LICENSE.SAFE)
-                context.config.isPlayIntegrityCheck = true
-                logShow("LICENSE.ERROR 2 : ${e.message}")
+                    .addOnFailureListener { exception: java.lang.Exception? ->
+                        callback(LICENSE.SAFE)
+                        handleError(exception!!)
+
+                    }
+
+
             }
-        }
+            .addOnFailureListener { exception ->
+                callback(LICENSE.SAFE)
+                handleError(exception)
+            }
+
+
     } catch (e: Exception) {
         callback(LICENSE.SAFE)
         context.config.isPlayIntegrityCheck = true
         logShow("requestIntegrityToken $e")
     }
-}
 
 
-private fun getErrorText(it: IntegrityServiceException): String {
-    when (it.errorCode) {
-        IntegrityErrorCode.API_NOT_AVAILABLE -> return "-1"
-        IntegrityErrorCode.APP_NOT_INSTALLED -> return "-5"
-        IntegrityErrorCode.APP_UID_MISMATCH -> return "-7"
-        IntegrityErrorCode.CANNOT_BIND_TO_SERVICE -> return "-9"
-        IntegrityErrorCode.CLIENT_TRANSIENT_ERROR -> return "-17"
-        IntegrityErrorCode.CLOUD_PROJECT_NUMBER_IS_INVALID -> return "-16"
-        IntegrityErrorCode.GOOGLE_SERVER_UNAVAILABLE -> return "-12"
-        IntegrityErrorCode.INTERNAL_ERROR -> return "-100"
-        IntegrityErrorCode.NETWORK_ERROR -> return "-3"
-        IntegrityErrorCode.NONCE_IS_NOT_BASE64 -> return "-13"
-        IntegrityErrorCode.NONCE_TOO_LONG -> return "-11"
-        IntegrityErrorCode.NONCE_TOO_SHORT -> return "-10"
-        IntegrityErrorCode.NO_ERROR -> return "0"
-        IntegrityErrorCode.PLAY_SERVICES_NOT_FOUND -> return "-6"
-        IntegrityErrorCode.PLAY_SERVICES_VERSION_OUTDATED -> return "-15"
-        IntegrityErrorCode.PLAY_STORE_ACCOUNT_NOT_FOUND -> return "-4"
-        IntegrityErrorCode.PLAY_STORE_NOT_FOUND -> return "-2"
-        IntegrityErrorCode.PLAY_STORE_VERSION_OUTDATED -> return "-14"
-        IntegrityErrorCode.TOO_MANY_REQUESTS -> return "-8"
-    }
-    return "0"
 }
+
+fun handleError(exception: java.lang.Exception) {
+
+    logShow("Madhuri handleError: $exception")
+}
+
 
 private fun generateNonce(): String {
     val allowed = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
@@ -348,89 +367,21 @@ private fun logShow(msg: String) {
     Log.e("AppProtector", msg)
 }
 
+private fun showToast(context: Context, msg: String) {
+
+    Handler(Looper.getMainLooper()).post {
+        if (showError) {
+            Toast.makeText(context, msg, Toast.LENGTH_SHORT).show()
+        }
+    }
+
+}
+
 fun Context.getSharedPrefs() =
     PreferenceManager.getDefaultSharedPreferences(this)
 
 
 val Context.config: Config get() = Config.newInstance(applicationContext)
-fun Context.getDate(): String {
-    val sdf = SimpleDateFormat("dd/M/yyyy")
-    val currentDate = sdf.format(Date())
-    System.out.println(" C DATE is  " + currentDate)
-    logShow("getDate $currentDate")
-    return currentDate
-}
-
-fun Context.makeLink(
-    strSentence: String,
-    strLinkWord: String,
-    txtView: TextView,
-    objects: LinkTextClick,
-    strType: String
-) {
-
-    val spannableText = SpannableString(strSentence)
-    val startIndex = strSentence.indexOf(strLinkWord)
-    val endIndex = startIndex + strLinkWord.length
-    val clickableSpan = object : ClickableSpan() {
-        override fun onClick(widget: View) {
-            objects.onClickLinkText(strType)
-        }
-
-        override fun updateDrawState(ds: TextPaint) {
-            super.updateDrawState(ds)
-            ds.isUnderlineText = false
-            val value = TypedValue()
-            theme.resolveAttribute(R.attr.dialog_link_text_color, value, true)
-            ds.color = value.data
-        }
-    }
-    val customFont = ResourcesCompat.getFont(this, R.font.roboto)
-    val customTypefaceSpan = CustomTypefaceSpan(customFont!!)
-    if (startIndex != -1) {
-        spannableText.setSpan(
-            clickableSpan,
-            startIndex,
-            endIndex,
-            Spannable.SPAN_INCLUSIVE_INCLUSIVE
-        )
-    }
-    spannableText.setSpan(
-        customTypefaceSpan,
-        0,
-        strSentence.length,
-        Spannable.SPAN_INCLUSIVE_INCLUSIVE
-    )
-// Make sure to set the movement method on the TextView to handle the clicks
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-        txtView.justificationMode = LineBreaker.JUSTIFICATION_MODE_INTER_WORD
-
-    }
-    txtView.textAlignment = TextView.TEXT_ALIGNMENT_TEXT_START
-    txtView.movementMethod = LinkMovementMethod.getInstance()
-    txtView.text = spannableText
-
-}
-
-class CustomTypefaceSpan(private val typeface: Typeface) : MetricAffectingSpan() {
-
-    override fun updateDrawState(ds: TextPaint) {
-        applyCustomTypeface(ds)
-    }
-
-    override fun updateMeasureState(paint: TextPaint) {
-        applyCustomTypeface(paint)
-    }
-
-    private fun applyCustomTypeface(paint: Paint) {
-        val oldTypeface = paint.typeface
-        val oldStyle = oldTypeface?.style ?: 0
-
-        val newTypeface = Typeface.create(typeface, oldStyle)
-        paint.typeface = newTypeface
-    }
-}
-
 
 internal inline val Context.isOnline: Boolean
     get() {

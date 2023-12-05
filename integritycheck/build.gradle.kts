@@ -19,7 +19,8 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
+//            isDebuggable = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -43,6 +44,7 @@ dependencies {
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.10.0")
+    implementation("com.google.android.gms:play-services-base:18.2.0")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
@@ -54,12 +56,7 @@ dependencies {
         exclude(group = "com.google.guava", module = "guava")
     }
 
-    implementation("com.google.guava:guava") {
-        version {
-            strictly("31.1-android")
-        }
-    }
-    //  Google Authentication
+//   Google Authentication
     implementation ("com.google.api-client:google-api-client-jackson2:1.20.0")
     implementation ("com.google.auth:google-auth-library-credentials:1.20.0")
     implementation ("com.google.auth:google-auth-library-oauth2-http:1.20.0")
