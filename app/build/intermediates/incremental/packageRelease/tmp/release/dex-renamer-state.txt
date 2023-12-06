@@ -1,0 +1,10 @@
+#Tue Dec 05 15:09:05 IST 2023
+base.0=/Users/android/Downloads/Integrity-Check/app/build/intermediates/dex/release/mergeDexRelease/classes.dex
+base.1=/Users/android/Downloads/Integrity-Check/app/build/intermediates/global_synthetics_dex/release/classes.dex
+base.2=/Users/android/Downloads/Integrity-Check/app/build/intermediates/dex/release/mergeDexRelease/classes2.dex
+path.0=classes.dex
+path.1=classes.dex
+path.2=classes2.dex
+renamed.0=classes.dex
+renamed.1=classes2.dex
+renamed.2=classes3.dex

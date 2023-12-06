@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "com.safetynet.integritycheck-merged_res-32:/color-night-v8/material_timepicker_modebutton_tint.xml",
+        "source": "com.safetynet.integritycheck-material-1.10.0-23:/color-night-v8/material_timepicker_modebutton_tint.xml"
+    },
+    {
+        "merged": "com.safetynet.integritycheck-merged_res-32:/color-night-v8/material_timepicker_button_stroke.xml",
+        "source": "com.safetynet.integritycheck-material-1.10.0-23:/color-night-v8/material_timepicker_button_stroke.xml"
+    },
+    {
+        "merged": "com.safetynet.integritycheck-merged_res-32:/color-night-v8/material_timepicker_clockface.xml",
+        "source": "com.safetynet.integritycheck-material-1.10.0-23:/color-night-v8/material_timepicker_clockface.xml"
+    }
+]

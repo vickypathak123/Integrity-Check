@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "com.safetynet.integritycheck-merged_res-32:/drawable-ldpi-v4/ic_call_answer_video_low.png",
+        "source": "com.safetynet.integritycheck-core-1.12.0-16:/drawable-ldpi-v4/ic_call_answer_video_low.png"
+    },
+    {
+        "merged": "com.safetynet.integritycheck-merged_res-32:/drawable-ldpi-v4/ic_call_answer_low.png",
+        "source": "com.safetynet.integritycheck-core-1.12.0-16:/drawable-ldpi-v4/ic_call_answer_low.png"
+    },
+    {
+        "merged": "com.safetynet.integritycheck-merged_res-32:/drawable-ldpi-v4/ic_call_answer_video.png",
+        "source": "com.safetynet.integritycheck-core-1.12.0-16:/drawable-ldpi-v4/ic_call_answer_video.png"
+    },
+    {
+        "merged": "com.safetynet.integritycheck-merged_res-32:/drawable-ldpi-v4/ic_call_decline.png",
+        "source": "com.safetynet.integritycheck-core-1.12.0-16:/drawable-ldpi-v4/ic_call_decline.png"
+    },
+    {
+        "merged": "com.safetynet.integritycheck-merged_res-32:/drawable-ldpi-v4/ic_call_answer.png",
+        "source": "com.safetynet.integritycheck-core-1.12.0-16:/drawable-ldpi-v4/ic_call_answer.png"
+    },
+    {
+        "merged": "com.safetynet.integritycheck-merged_res-32:/drawable-ldpi-v4/ic_call_decline_low.png",
+        "source": "com.safetynet.integritycheck-core-1.12.0-16:/drawable-ldpi-v4/ic_call_decline_low.png"
+    }
+]

@@ -1,0 +1,895 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 8.1.3" type="incidents">
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Alert&quot;, should use `@string` resource">
+        <location
+            file="${:integritycheck*debug*sourceProvider*0*resDir*0}/layout/dialog_play_integrity.xml"
+            line="39"
+            column="17"
+            startOffset="1861"
+            endLine="39"
+            endColumn="37"
+            endOffset="1881"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Exit&quot;, should use `@string` resource">
+        <location
+            file="${:integritycheck*debug*sourceProvider*0*resDir*0}/layout/dialog_play_integrity.xml"
+            line="75"
+            column="21"
+            startOffset="3420"
+            endLine="75"
+            endColumn="40"
+            endOffset="3439"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Install Now&quot;, should use `@string` resource">
+        <location
+            file="${:integritycheck*debug*sourceProvider*0*resDir*0}/layout/dialog_play_integrity.xml"
+            line="92"
+            column="21"
+            startOffset="4208"
+            endLine="92"
+            endColumn="47"
+            endOffset="4234"/>
+    </incident>
+
+    <incident
+        id="Typos"
+        severity="warning"
+        message="Did you mean &quot;DQEBBAUAMIGUMQswCQYDVQQGEwJVUzETMBEGA!&quot; instead of &quot;DQEBBAUAMIGUMQswCQYDVQQGEwJVUzETMBEGA1&quot;?">
+        <fix-replace
+            description="Replace with &quot;DQEBBAUAMIGUMQswCQYDVQQGEwJVUzETMBEGA!&quot;"
+            oldString="DQEBBAUAMIGUMQswCQYDVQQGEwJVUzETMBEGA1"
+            replacement="DQEBBAUAMIGUMQswCQYDVQQGEwJVUzETMBEGA!">
+            <range
+                file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+                startOffset="345"
+                endOffset="1941"/>
+        </fix-replace>
+        <location
+            file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+            line="9"
+            column="57"
+            startOffset="389"
+            endLine="9"
+            endColumn="57"
+            endOffset="426"/>
+    </incident>
+
+    <incident
+        id="Typos"
+        severity="warning"
+        message="Did you mean &quot;pYTEWMBQGA!&quot; instead of &quot;pYTEWMBQGA1&quot;?">
+        <fix-replace
+            description="Replace with &quot;pYTEWMBQGA!&quot;"
+            oldString="pYTEWMBQGA1"
+            replacement="pYTEWMBQGA!">
+            <range
+                file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+                startOffset="345"
+                endOffset="1941"/>
+        </fix-replace>
+        <location
+            file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+            line="9"
+            column="112"
+            startOffset="444"
+            endLine="9"
+            endColumn="112"
+            endOffset="454"/>
+    </incident>
+
+    <incident
+        id="Typos"
+        severity="warning"
+        message="Did you mean &quot;GA!&quot; instead of &quot;GA1&quot;?">
+        <fix-replace
+            description="Replace with &quot;GA!&quot;"
+            oldString="GA1"
+            replacement="GA!">
+            <range
+                file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+                startOffset="345"
+                endOffset="1941"/>
+        </fix-replace>
+        <location
+            file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+            line="9"
+            column="152"
+            startOffset="484"
+            endLine="9"
+            endColumn="152"
+            endOffset="486"/>
+    </incident>
+
+    <incident
+        id="Typos"
+        severity="warning"
+        message="Did you mean &quot;GA!&quot; instead of &quot;GA1&quot;?">
+        <fix-replace
+            description="Replace with &quot;GA!&quot;"
+            oldString="GA1"
+            replacement="GA!">
+            <range
+                file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+                startOffset="345"
+                endOffset="1941"/>
+        </fix-replace>
+        <location
+            file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+            line="9"
+            column="176"
+            startOffset="508"
+            endLine="9"
+            endColumn="176"
+            endOffset="510"/>
+    </incident>
+
+    <incident
+        id="Typos"
+        severity="warning"
+        message="Did you mean &quot;GA!&quot; instead of &quot;GA1&quot;?">
+        <fix-replace
+            description="Replace with &quot;GA!&quot;"
+            oldString="GA1"
+            replacement="GA!">
+            <range
+                file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+                startOffset="345"
+                endOffset="1941"/>
+        </fix-replace>
+        <location
+            file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+            line="9"
+            column="200"
+            startOffset="532"
+            endLine="9"
+            endColumn="200"
+            endOffset="534"/>
+    </incident>
+
+    <incident
+        id="Typos"
+        severity="warning"
+        message="Did you mean &quot;NTZaMIGUMQswCQYDVQQGEwJVUzETMBEGA!&quot; instead of &quot;NTZaMIGUMQswCQYDVQQGEwJVUzETMBEGA1&quot;?">
+        <fix-replace
+            description="Replace with &quot;NTZaMIGUMQswCQYDVQQGEwJVUzETMBEGA!&quot;"
+            oldString="NTZaMIGUMQswCQYDVQQGEwJVUzETMBEGA1"
+            replacement="NTZaMIGUMQswCQYDVQQGEwJVUzETMBEGA!">
+            <range
+                file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+                startOffset="345"
+                endOffset="1941"/>
+        </fix-replace>
+        <location
+            file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+            line="9"
+            column="305"
+            startOffset="637"
+            endLine="9"
+            endColumn="305"
+            endOffset="670"/>
+    </incident>
+
+    <incident
+        id="Typos"
+        severity="warning"
+        message="Did you mean &quot;pYTEWMBQGA!&quot; instead of &quot;pYTEWMBQGA1&quot;?">
+        <fix-replace
+            description="Replace with &quot;pYTEWMBQGA!&quot;"
+            oldString="pYTEWMBQGA1"
+            replacement="pYTEWMBQGA!">
+            <range
+                file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+                startOffset="345"
+                endOffset="1941"/>
+        </fix-replace>
+        <location
+            file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+            line="9"
+            column="356"
+            startOffset="688"
+            endLine="9"
+            endColumn="356"
+            endOffset="698"/>
+    </incident>
+
+    <incident
+        id="Typos"
+        severity="warning"
+        message="Did you mean &quot;GA!&quot; instead of &quot;GA1&quot;?">
+        <fix-replace
+            description="Replace with &quot;GA!&quot;"
+            oldString="GA1"
+            replacement="GA!">
+            <range
+                file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+                startOffset="345"
+                endOffset="1941"/>
+        </fix-replace>
+        <location
+            file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+            line="9"
+            column="396"
+            startOffset="728"
+            endLine="9"
+            endColumn="396"
+            endOffset="730"/>
+    </incident>
+
+    <incident
+        id="Typos"
+        severity="warning"
+        message="Did you mean &quot;GA!&quot; instead of &quot;GA1&quot;?">
+        <fix-replace
+            description="Replace with &quot;GA!&quot;"
+            oldString="GA1"
+            replacement="GA!">
+            <range
+                file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+                startOffset="345"
+                endOffset="1941"/>
+        </fix-replace>
+        <location
+            file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+            line="9"
+            column="420"
+            startOffset="752"
+            endLine="9"
+            endColumn="420"
+            endOffset="754"/>
+    </incident>
+
+    <incident
+        id="Typos"
+        severity="warning"
+        message="Did you mean &quot;GA!&quot; instead of &quot;GA1&quot;?">
+        <fix-replace
+            description="Replace with &quot;GA!&quot;"
+            oldString="GA1"
+            replacement="GA!">
+            <range
+                file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+                startOffset="345"
+                endOffset="1941"/>
+        </fix-replace>
+        <location
+            file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+            line="9"
+            column="444"
+            startOffset="776"
+            endLine="9"
+            endColumn="444"
+            endOffset="778"/>
+    </incident>
+
+    <incident
+        id="Typos"
+        severity="warning"
+        message="Did you mean &quot;hZeTfHwqNvacKhp!&quot; instead of &quot;hZeTfHwqNvacKhp1&quot;?">
+        <fix-replace
+            description="Replace with &quot;hZeTfHwqNvacKhp!&quot;"
+            oldString="hZeTfHwqNvacKhp1"
+            replacement="hZeTfHwqNvacKhp!">
+            <range
+                file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+                startOffset="345"
+                endOffset="1941"/>
+        </fix-replace>
+        <location
+            file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+            line="9"
+            column="684"
+            startOffset="1016"
+            endLine="9"
+            endColumn="684"
+            endOffset="1031"/>
+    </incident>
+
+    <incident
+        id="Typos"
+        severity="warning"
+        message="Did you mean &quot;xT!&quot; instead of &quot;xT1&quot;?">
+        <fix-replace
+            description="Replace with &quot;xT!&quot;"
+            oldString="xT1"
+            replacement="xT!">
+            <range
+                file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+                startOffset="345"
+                endOffset="1941"/>
+        </fix-replace>
+        <location
+            file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+            line="9"
+            column="803"
+            startOffset="1135"
+            endLine="9"
+            endColumn="803"
+            endOffset="1137"/>
+    </incident>
+
+    <incident
+        id="Typos"
+        severity="warning"
+        message="Did you mean &quot;CyoYGapIGXMIGUMQswCQYDVQQGEwJVUzETMBEGA!&quot; instead of &quot;CyoYGapIGXMIGUMQswCQYDVQQGEwJVUzETMBEGA1&quot;?">
+        <fix-replace
+            description="Replace with &quot;CyoYGapIGXMIGUMQswCQYDVQQGEwJVUzETMBEGA!&quot;"
+            oldString="CyoYGapIGXMIGUMQswCQYDVQQGEwJVUzETMBEGA1"
+            replacement="CyoYGapIGXMIGUMQswCQYDVQQGEwJVUzETMBEGA!">
+            <range
+                file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+                startOffset="345"
+                endOffset="1941"/>
+        </fix-replace>
+        <location
+            file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+            line="9"
+            column="995"
+            startOffset="1327"
+            endLine="9"
+            endColumn="995"
+            endOffset="1366"/>
+    </incident>
+
+    <incident
+        id="Typos"
+        severity="warning"
+        message="Did you mean &quot;pYTEWMBQGA!&quot; instead of &quot;pYTEWMBQGA1&quot;?">
+        <fix-replace
+            description="Replace with &quot;pYTEWMBQGA!&quot;"
+            oldString="pYTEWMBQGA1"
+            replacement="pYTEWMBQGA!">
+            <range
+                file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+                startOffset="345"
+                endOffset="1941"/>
+        </fix-replace>
+        <location
+            file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+            line="9"
+            column="1052"
+            startOffset="1384"
+            endLine="9"
+            endColumn="1052"
+            endOffset="1394"/>
+    </incident>
+
+    <incident
+        id="Typos"
+        severity="warning"
+        message="Did you mean &quot;GA!&quot; instead of &quot;GA1&quot;?">
+        <fix-replace
+            description="Replace with &quot;GA!&quot;"
+            oldString="GA1"
+            replacement="GA!">
+            <range
+                file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+                startOffset="345"
+                endOffset="1941"/>
+        </fix-replace>
+        <location
+            file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+            line="9"
+            column="1092"
+            startOffset="1424"
+            endLine="9"
+            endColumn="1092"
+            endOffset="1426"/>
+    </incident>
+
+    <incident
+        id="Typos"
+        severity="warning"
+        message="Did you mean &quot;GA!&quot; instead of &quot;GA1&quot;?">
+        <fix-replace
+            description="Replace with &quot;GA!&quot;"
+            oldString="GA1"
+            replacement="GA!">
+            <range
+                file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+                startOffset="345"
+                endOffset="1941"/>
+        </fix-replace>
+        <location
+            file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+            line="9"
+            column="1116"
+            startOffset="1448"
+            endLine="9"
+            endColumn="1116"
+            endOffset="1450"/>
+    </incident>
+
+    <incident
+        id="Typos"
+        severity="warning"
+        message="Did you mean &quot;GA!&quot; instead of &quot;GA1&quot;?">
+        <fix-replace
+            description="Replace with &quot;GA!&quot;"
+            oldString="GA1"
+            replacement="GA!">
+            <range
+                file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+                startOffset="345"
+                endOffset="1941"/>
+        </fix-replace>
+        <location
+            file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+            line="9"
+            column="1140"
+            startOffset="1472"
+            endLine="9"
+            endColumn="1140"
+            endOffset="1474"/>
+    </incident>
+
+    <incident
+        id="Typos"
+        severity="warning"
+        message="Did you mean &quot;MAwGA!&quot; instead of &quot;MAwGA1&quot;?">
+        <fix-replace
+            description="Replace with &quot;MAwGA!&quot;"
+            oldString="MAwGA1"
+            replacement="MAwGA!">
+            <range
+                file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+                startOffset="345"
+                endOffset="1941"/>
+        </fix-replace>
+        <location
+            file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+            line="9"
+            column="1221"
+            startOffset="1553"
+            endLine="9"
+            endColumn="1221"
+            endOffset="1558"/>
+    </incident>
+
+    <incident
+        id="Typos"
+        severity="warning"
+        message="Did you mean &quot;wNfdIjIz!&quot; instead of &quot;wNfdIjIz1&quot;?">
+        <fix-replace
+            description="Replace with &quot;wNfdIjIz!&quot;"
+            oldString="wNfdIjIz1"
+            replacement="wNfdIjIz!">
+            <range
+                file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+                startOffset="345"
+                endOffset="1941"/>
+        </fix-replace>
+        <location
+            file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+            line="9"
+            column="1279"
+            startOffset="1611"
+            endLine="9"
+            endColumn="1279"
+            endOffset="1619"/>
+    </incident>
+
+    <incident
+        id="Typos"
+        severity="warning"
+        message="Did you mean &quot;mtKoOD!&quot; instead of &quot;mtKoOD1&quot;?">
+        <fix-replace
+            description="Replace with &quot;mtKoOD!&quot;"
+            oldString="mtKoOD1"
+            replacement="mtKoOD!">
+            <range
+                file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+                startOffset="345"
+                endOffset="1941"/>
+        </fix-replace>
+        <location
+            file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+            line="9"
+            column="1326"
+            startOffset="1658"
+            endLine="9"
+            endColumn="1326"
+            endOffset="1664"/>
+    </incident>
+
+    <incident
+        id="Typos"
+        severity="warning"
+        message="Did you mean &quot;ybmlhMRYwFAYDVQQHEw!&quot; instead of &quot;ybmlhMRYwFAYDVQQHEw1&quot;?">
+        <fix-replace
+            description="Replace with &quot;ybmlhMRYwFAYDVQQHEw!&quot;"
+            oldString="ybmlhMRYwFAYDVQQHEw1"
+            replacement="ybmlhMRYwFAYDVQQHEw!">
+            <range
+                file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+                startOffset="2071"
+                endOffset="3531"/>
+        </fix-replace>
+        <location
+            file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+            line="14"
+            column="108"
+            startOffset="2166"
+            endLine="14"
+            endColumn="108"
+            endOffset="2185"/>
+    </incident>
+
+    <incident
+        id="Typos"
+        severity="warning"
+        message="Did you mean &quot;GA!&quot; instead of &quot;GA1&quot;?">
+        <fix-replace
+            description="Replace with &quot;GA!&quot;"
+            oldString="GA1"
+            replacement="GA!">
+            <range
+                file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+                startOffset="2071"
+                endOffset="3531"/>
+        </fix-replace>
+        <location
+            file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+            line="14"
+            column="180"
+            startOffset="2238"
+            endLine="14"
+            endColumn="180"
+            endOffset="2240"/>
+    </incident>
+
+    <incident
+        id="Typos"
+        severity="warning"
+        message="Did you mean &quot;GA!&quot; instead of &quot;GA1&quot;?">
+        <fix-replace
+            description="Replace with &quot;GA!&quot;"
+            oldString="GA1"
+            replacement="GA!">
+            <range
+                file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+                startOffset="2071"
+                endOffset="3531"/>
+        </fix-replace>
+        <location
+            file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+            line="14"
+            column="204"
+            startOffset="2262"
+            endLine="14"
+            endColumn="204"
+            endOffset="2264"/>
+    </incident>
+
+    <incident
+        id="Typos"
+        severity="warning"
+        message="Did you mean &quot;ybmlhMRYwFAYDVQQHEw!&quot; instead of &quot;ybmlhMRYwFAYDVQQHEw1&quot;?">
+        <fix-replace
+            description="Replace with &quot;ybmlhMRYwFAYDVQQHEw!&quot;"
+            oldString="ybmlhMRYwFAYDVQQHEw1"
+            replacement="ybmlhMRYwFAYDVQQHEw!">
+            <range
+                file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+                startOffset="2071"
+                endOffset="3531"/>
+        </fix-replace>
+        <location
+            file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+            line="14"
+            column="308"
+            startOffset="2366"
+            endLine="14"
+            endColumn="308"
+            endOffset="2385"/>
+    </incident>
+
+    <incident
+        id="Typos"
+        severity="warning"
+        message="Did you mean &quot;GA!&quot; instead of &quot;GA1&quot;?">
+        <fix-replace
+            description="Replace with &quot;GA!&quot;"
+            oldString="GA1"
+            replacement="GA!">
+            <range
+                file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+                startOffset="2071"
+                endOffset="3531"/>
+        </fix-replace>
+        <location
+            file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+            line="14"
+            column="380"
+            startOffset="2438"
+            endLine="14"
+            endColumn="380"
+            endOffset="2440"/>
+    </incident>
+
+    <incident
+        id="Typos"
+        severity="warning"
+        message="Did you mean &quot;GA!&quot; instead of &quot;GA1&quot;?">
+        <fix-replace
+            description="Replace with &quot;GA!&quot;"
+            oldString="GA1"
+            replacement="GA!">
+            <range
+                file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+                startOffset="2071"
+                endOffset="3531"/>
+        </fix-replace>
+        <location
+            file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+            line="14"
+            column="404"
+            startOffset="2462"
+            endLine="14"
+            endColumn="404"
+            endOffset="2464"/>
+    </incident>
+
+    <incident
+        id="Typos"
+        severity="warning"
+        message="Did you mean &quot;sypEwPpt!&quot; instead of &quot;sypEwPpt1&quot;?">
+        <fix-replace
+            description="Replace with &quot;sypEwPpt!&quot;"
+            oldString="sypEwPpt1"
+            replacement="sypEwPpt!">
+            <range
+                file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+                startOffset="2071"
+                endOffset="3531"/>
+        </fix-replace>
+        <location
+            file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+            line="14"
+            column="498"
+            startOffset="2556"
+            endLine="14"
+            endColumn="498"
+            endOffset="2564"/>
+    </incident>
+
+    <incident
+        id="Typos"
+        severity="warning"
+        message="Did you mean &quot;idkyugwfYwXFU!&quot; instead of &quot;idkyugwfYwXFU1&quot;?">
+        <fix-replace
+            description="Replace with &quot;idkyugwfYwXFU!&quot;"
+            oldString="idkyugwfYwXFU1"
+            replacement="idkyugwfYwXFU!">
+            <range
+                file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+                startOffset="2071"
+                endOffset="3531"/>
+        </fix-replace>
+        <location
+            file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+            line="14"
+            column="644"
+            startOffset="2702"
+            endLine="14"
+            endColumn="644"
+            endOffset="2715"/>
+    </incident>
+
+    <incident
+        id="Typos"
+        severity="warning"
+        message="Did you mean &quot;jMIhF!&quot; instead of &quot;jMIhF1&quot;?">
+        <fix-replace
+            description="Replace with &quot;jMIhF!&quot;"
+            oldString="jMIhF1"
+            replacement="jMIhF!">
+            <range
+                file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+                startOffset="2071"
+                endOffset="3531"/>
+        </fix-replace>
+        <location
+            file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+            line="14"
+            column="837"
+            startOffset="2895"
+            endLine="14"
+            endColumn="837"
+            endOffset="2900"/>
+    </incident>
+
+    <incident
+        id="Typos"
+        severity="warning"
+        message="Did you mean &quot;jMIhF!&quot; instead of &quot;jMIhF1&quot;?">
+        <fix-replace
+            description="Replace with &quot;jMIhF!&quot;"
+            oldString="jMIhF1"
+            replacement="jMIhF!">
+            <range
+                file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+                startOffset="2071"
+                endOffset="3531"/>
+        </fix-replace>
+        <location
+            file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+            line="14"
+            column="885"
+            startOffset="2943"
+            endLine="14"
+            endColumn="885"
+            endOffset="2948"/>
+    </incident>
+
+    <incident
+        id="Typos"
+        severity="warning"
+        message="Did you mean &quot;MQswCQYDVQQGEwJVUzETMBEGA!&quot; instead of &quot;MQswCQYDVQQGEwJVUzETMBEGA1&quot;?">
+        <fix-replace
+            description="Replace with &quot;MQswCQYDVQQGEwJVUzETMBEGA!&quot;"
+            oldString="MQswCQYDVQQGEwJVUzETMBEGA1"
+            replacement="MQswCQYDVQQGEwJVUzETMBEGA!">
+            <range
+                file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+                startOffset="2071"
+                endOffset="3531"/>
+        </fix-replace>
+        <location
+            file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+            line="14"
+            column="917"
+            startOffset="2975"
+            endLine="14"
+            endColumn="917"
+            endOffset="3000"/>
+    </incident>
+
+    <incident
+        id="Typos"
+        severity="warning"
+        message="Did you mean &quot;pYTEWMBQGA!&quot; instead of &quot;pYTEWMBQGA1&quot;?">
+        <fix-replace
+            description="Replace with &quot;pYTEWMBQGA!&quot;"
+            oldString="pYTEWMBQGA1"
+            replacement="pYTEWMBQGA!">
+            <range
+                file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+                startOffset="2071"
+                endOffset="3531"/>
+        </fix-replace>
+        <location
+            file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+            line="14"
+            column="960"
+            startOffset="3018"
+            endLine="14"
+            endColumn="960"
+            endOffset="3028"/>
+    </incident>
+
+    <incident
+        id="Typos"
+        severity="warning"
+        message="Did you mean &quot;gVmlldzEUMBIGA!&quot; instead of &quot;gVmlldzEUMBIGA1&quot;?">
+        <fix-replace
+            description="Replace with &quot;gVmlldzEUMBIGA!&quot;"
+            oldString="gVmlldzEUMBIGA1"
+            replacement="gVmlldzEUMBIGA!">
+            <range
+                file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+                startOffset="2071"
+                endOffset="3531"/>
+        </fix-replace>
+        <location
+            file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+            line="14"
+            column="988"
+            startOffset="3046"
+            endLine="14"
+            endColumn="988"
+            endOffset="3060"/>
+    </incident>
+
+    <incident
+        id="Typos"
+        severity="warning"
+        message="Did you mean &quot;iZBqpknHf!&quot; instead of &quot;iZBqpknHf1&quot;?">
+        <fix-replace
+            description="Replace with &quot;iZBqpknHf!&quot;"
+            oldString="iZBqpknHf1"
+            replacement="iZBqpknHf!">
+            <range
+                file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+                startOffset="2071"
+                endOffset="3531"/>
+        </fix-replace>
+        <location
+            file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+            line="14"
+            column="1294"
+            startOffset="3352"
+            endLine="14"
+            endColumn="1294"
+            endOffset="3361"/>
+    </incident>
+
+    <incident
+        id="Typos"
+        severity="warning"
+        message="Did you mean &quot;XFI!&quot; instead of &quot;XFI1&quot;?">
+        <fix-replace
+            description="Replace with &quot;XFI!&quot;"
+            oldString="XFI1"
+            replacement="XFI!">
+            <range
+                file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+                startOffset="2071"
+                endOffset="3531"/>
+        </fix-replace>
+        <location
+            file="${:integritycheck*debug*sourceProvider*0*resDir*0}/values/font_certs.xml"
+            line="14"
+            column="1337"
+            startOffset="3395"
+            endLine="14"
+            endColumn="1337"
+            endOffset="3398"/>
+    </incident>
+
+    <incident
+        id="SimpleDateFormat"
+        severity="warning"
+        message="To get local formatting use `getDateInstance()`, `getDateTimeInstance()`, or `getTimeInstance()`, or use `new SimpleDateFormat(String template, Locale locale)` with for example `Locale.US` for ASCII dates.">
+        <location
+            file="${:integritycheck*debug*sourceProvider*0*javaDir*0}/com/safetynet/integritycheck/integrity/AppProtector.kt"
+            line="357"
+            column="15"
+            startOffset="15248"
+            endLine="357"
+            endColumn="44"
+            endOffset="15277"/>
+    </incident>
+
+    <incident
+        id="TrustAllX509TrustManager"
+        severity="warning"
+        message="`checkClientTrusted` is empty, which could cause insecure network traffic due to trusting arbitrary TLS/SSL certificates presented by peers">
+        <location
+            file="$GRADLE_USER_HOME/caches/modules-2/files-2.1/com.google.http-client/google-http-client/1.43.3/a758b82e55a2f5f681e289c5ed384d3dbda6f3cd/google-http-client-1.43.3.jar"/>
+    </incident>
+
+    <incident
+        id="TrustAllX509TrustManager"
+        severity="warning"
+        message="`checkServerTrusted` is empty, which could cause insecure network traffic due to trusting arbitrary TLS/SSL certificates presented by peers">
+        <location
+            file="$GRADLE_USER_HOME/caches/modules-2/files-2.1/com.google.http-client/google-http-client/1.43.3/a758b82e55a2f5f681e289c5ed384d3dbda6f3cd/google-http-client-1.43.3.jar"/>
+    </incident>
+
+    <incident
+        id="InflateParams"
+        severity="warning"
+        message="Avoid passing `null` as the view root (needed to resolve layout parameters on the inflated layout&apos;s root element)">
+        <location
+            file="${:integritycheck*debug*sourceProvider*0*javaDir*0}/com/safetynet/integritycheck/utils/AlertPlayIntegrityDialog.kt"
+            line="50"
+            column="80"
+            startOffset="1470"
+            endLine="50"
+            endColumn="84"
+            endOffset="1474"/>
+    </incident>
+
+</incidents>

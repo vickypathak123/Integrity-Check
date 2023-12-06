@@ -183,7 +183,6 @@ private fun requestIntegrityToken(
                 verdictCodeList = getCodeList(obj.getJSONArray("verdictsResponseCodes"))
         }
         logShow("showError = $showError  verdictCodeList = $verdictCodeList")
-        logShow("showError = playData ${context.config.playData}")
         // Create an instance of a manager.
         val standardIntegrityManager = IntegrityManagerFactory.createStandard(context)
 
@@ -396,4 +395,3 @@ internal inline val Context.isOnline: Boolean
 enum class LICENSE {
     SAFE, NOT_SAFE, ERROR, OLD_PLAY_STORE
 }
-

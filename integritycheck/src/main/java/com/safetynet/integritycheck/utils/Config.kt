@@ -18,13 +18,8 @@ class Config(context: Context) {
     var isPlayIntegrityCheck: Boolean
         get() = prefs.getBoolean("IS_PLAY_INTEGRITY_CHECK", false)
         set(isCheck) = prefs.edit().putBoolean("IS_PLAY_INTEGRITY_CHECK", isCheck).apply()
-
     var isToday: String?
         get() = prefs.getString("IS_TODAY","")
         set(todayDate) = prefs.edit().putString("IS_TODAY", todayDate).apply()
-
-    var playData: String?
-        get() = prefs.getString("play_Integrity","")
-        set(playData) = prefs.edit().putString("play_Integrity", playData).apply()
 
 }

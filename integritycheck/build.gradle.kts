@@ -19,8 +19,7 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = true
-//            isDebuggable = true
+            isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -61,7 +60,7 @@ dependencies {
     implementation ("com.google.auth:google-auth-library-credentials:1.20.0")
     implementation ("com.google.auth:google-auth-library-oauth2-http:1.20.0")
 
-    //  Admob Consent
+//  Admob Consent
     implementation ("com.google.android.ump:user-messaging-platform:2.1.0")
 }
 val integrityVersion: String by rootProject.extra

@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "com.safetynet.integritycheck-merged_res-32:/animator-v21/design_appbar_state_list_animator.xml",
+        "source": "com.safetynet.integritycheck-material-1.10.0-23:/animator-v21/design_appbar_state_list_animator.xml"
+    },
+    {
+        "merged": "com.safetynet.integritycheck-merged_res-32:/animator-v21/m3_appbar_state_list_animator.xml",
+        "source": "com.safetynet.integritycheck-material-1.10.0-23:/animator-v21/m3_appbar_state_list_animator.xml"
+    }
+]
